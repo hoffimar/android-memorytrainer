@@ -1,0 +1,6 @@
+download 100-list from gdocs via spreadsheets api
+make length of number to be memorized configurable
+find icon
+write test cases
+maintain statistics on how often the user was right
+make 100-list items editable, and uploadable to gdocs

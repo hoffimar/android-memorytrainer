@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
+	<TextView
+		android:text="This app can help you in training your memory using the method of loci"
+		android:id="@+id/TextView01" android:layout_width="wrap_content"
+		android:layout_height="wrap_content"></TextView>
+	<Button android:text="Method of loci on Wikipedia" android:id="@+id/Button01"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+
+</LinearLayout>
