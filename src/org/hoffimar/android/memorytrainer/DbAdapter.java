@@ -87,6 +87,10 @@ public class DbAdapter {
         return mDb.delete(LIST_TABLE_NAME, KEY_ID + "=" + id, null) > 0;
     }
     
+    public boolean deleteAllItems(){
+    	return mDb.delete(LIST_TABLE_NAME, null, null) > 0;
+    }
+    
     public boolean updateNote(int id, String symbol, String picurl) {
         ContentValues args = new ContentValues();
         args.put(KEY_ID, id);

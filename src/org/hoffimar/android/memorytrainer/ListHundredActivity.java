@@ -8,13 +8,10 @@ import org.hoffimar.android.memorytrainer.model.SpreadsheetEntry;
 import org.hoffimar.android.memorytrainer.model.UserFeed;
 import org.hoffimar.android.memorytrainer.model.WorksheetsFeed;
 
-import android.accounts.Account;
-import android.accounts.AccountManager;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -57,6 +54,9 @@ public class ListHundredActivity extends ListActivity {
 
 		// setContentView(R.layout.listhundred_item);
 
+		mDbHelper = new DbAdapter(this);
+		mDbHelper.open();
+
 		transport.setVersionHeader(GoogleSpreadsheets.VERSION);
 		AtomParser parser = new AtomParser();
 		parser.namespaceDictionary = GoogleSpreadsheetsAtom.NAMESPACE_DICTIONARY;
@@ -64,9 +64,6 @@ public class ListHundredActivity extends ListActivity {
 		transport.applicationName = "memorize-it";
 		HttpTransport.setLowLevelHttpTransport(ApacheHttpTransport.INSTANCE);
 		gotAccount(false);
-
-		mDbHelper = new DbAdapter(this);
-		mDbHelper.open();
 
 		fillData();
 	}
@@ -100,7 +97,7 @@ public class ListHundredActivity extends ListActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case MENU_IMPORT_SPREADSHEETS:
-			new ImportListTask().execute("URL...");// TODO change
+			// TODO do something?
 			return true;
 		}
 		return false;
@@ -164,7 +161,6 @@ public class ListHundredActivity extends ListActivity {
 				}
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			Log.e(Constants.LOG_TAG, e.getMessage());
 		}
 	}
@@ -181,36 +177,35 @@ public class ListHundredActivity extends ListActivity {
 
 			for (SpreadsheetEntry se : userFeed.spreadsheets) {
 				Log.v(Constants.LOG_TAG, "Spreadsheet title: " + se.title);
-				
-				if (se.title.equalsIgnoreCase("MemorizeIt")){
+
+				if (se.title.equalsIgnoreCase("MemorizeIt")) {
 					// Get worksheet feed url
-					GoogleUrl url = new GoogleUrl(se.getContentLink().replaceFirst("http:", "https:"));
-					
+					GoogleUrl url = new GoogleUrl(se.getContentLink().replaceFirst("http:",
+							"https:"));
 					Log.v(Constants.LOG_TAG, url.toString());
-					
-					
+
 					// Execute request
 					HttpRequest request2 = transport.buildGetRequest();
 					request2.url = url;
-//					request2.url = new GoogleUrl("https://spreadsheets.google.com/feeds/t9cz-0tm0gGzOJCXMVju0Xw/tables");
-//					request2.url = new GoogleUrl(GoogleSpreadsheets.ROOT_URL + "spreadsheets/private/full");
 					response = request2.execute();
 					WorksheetsFeed worksheetsFeed = response.parseAs(WorksheetsFeed.class);
-//					String respString = response.parseAsString();
-//					Log.v(Constants.LOG_TAG, respString);
-					
+
 					// Get list feed
-					GoogleUrl listFeedUrl = new GoogleUrl(worksheetsFeed.worksheets.get(0).getCellsLink().replaceFirst("http:", "https:"));
+					GoogleUrl listFeedUrl = new GoogleUrl(worksheetsFeed.worksheets.get(0)
+							.getCellsLink().replaceFirst("http:", "https:"));
 					HttpRequest request3 = transport.buildGetRequest();
 					request3.url = listFeedUrl;
 					Log.v(Constants.LOG_TAG, listFeedUrl.toString());
 					response = request3.execute();
-//					String respString = response.parseAsString();
-//					Log.v(Constants.LOG_TAG, respString);
 					CellFeed cellFeed = response.parseAs(CellFeed.class);
-					
-					for (CellEntry cell : cellFeed.cells){
-						Log.v(Constants.LOG_TAG, cell.content);
+
+					int i = 0;
+					for (CellEntry cell : cellFeed.cells) {
+						if (cell.cell.col.equals("1")) {
+							i++;
+							mDbHelper.updateNote(i, cell.cell.inputValue, "");
+						}
+
 					}
 					Log.v(Constants.LOG_TAG, "done reading...");
 				}
@@ -218,43 +213,6 @@ public class ListHundredActivity extends ListActivity {
 
 		} catch (IOException e) {
 			Log.e(Constants.LOG_TAG, "Message: " + e.getMessage());
-		}
-
-	}
-
-	private class ImportListTask extends AsyncTask<String, Integer, Long> {
-
-		@Override
-		protected Long doInBackground(String... params) {
-			AccountManager accountManager = AccountManager.get(getApplicationContext());
-			Account[] accounts = accountManager.getAccountsByType("com.google");
-			Account account;
-			if (accounts.length > 0) {
-				account = accounts[0];
-				Log.v(Constants.LOG_TAG, "account name: " + account.name);
-
-				// Call google server
-				transport.setVersionHeader(GoogleSpreadsheets.VERSION);
-				AtomParser parser = new AtomParser();
-				parser.namespaceDictionary = GoogleSpreadsheetsAtom.NAMESPACE_DICTIONARY;
-				transport.addParser(parser);
-				transport.applicationName = "memorize-it";
-				HttpTransport.setLowLevelHttpTransport(ApacheHttpTransport.INSTANCE);
-
-				gotAccount(true);
-
-			} else {
-				Log.v(Constants.LOG_TAG, "no account found");
-				account = null;
-			}
-
-			return null;
-		}
-
-		@Override
-		protected void onPostExecute(Long result) {
-			// TODO Auto-generated method stub
-			super.onPostExecute(result);
 		}
 
 	}

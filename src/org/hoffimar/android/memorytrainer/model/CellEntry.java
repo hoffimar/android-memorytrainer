@@ -6,5 +6,9 @@ public class CellEntry extends Entry {
 	
 	@Key
 	public String content;
+	
+	@Key("gs:cell")
+	public Cell cell;
+	
 
 }

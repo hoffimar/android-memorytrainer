@@ -9,7 +9,7 @@
 	-->
 
 	<TextView android:text="" android:id="@+id/TextViewID"
-		android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+		android:layout_width="wrap_content" android:layout_height="wrap_content" android:width="30sp"></TextView>
 	<TextView android:text="" android:id="@+id/TextViewSymbol"
-		android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+		android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="5sp"></TextView>
 </LinearLayout>
