@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Memory Trainer</string>
+	<string name="check_number_instructions">Bitte gib die letzte Zahl aus dem Gedächtnis ein</string>
+	<string name="show_hint">Hinweis anzeigen</string>
+	<string name="hide_hint">Hinweis verbergen</string> 
+	<string name="result_number_right">Richtig!</string>
+	<string name="result_number_wrong">Falsche Zahl!</string>
+	<string name="main_button_generate_number">Neue Zahl generieren</string>
+	<string name="main_button_check_last_number">Letzte Zahl eingeben</string>
+	<string name="main_button_maintain_list">Liste verwalten</string>
+	<string name="about_button_wikipedia">Loci-Methode bei Wikipedia</string>
+	<string name="about_description">Diese App hilft ihnen, die Loci-Methode zu üben</string>
+	<string name="button_verify">Prüfen</string>
+	<string name="about_link_wikipedia">http://de.wikipedia.org/wiki/Loci-Methode</string>
+	<string name="main_about_button">Info</string>
+</resources>

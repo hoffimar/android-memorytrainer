@@ -5,7 +5,7 @@
   android:layout_height="wrap_content"
   android:orientation="vertical">
 <TextView android:text="@+id/TextView" android:id="@+id/TextViewGeneratedNumber" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp"></TextView>
-<Button android:text="Show hint" android:id="@+id/ButtonShowHint" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+<Button android:text="@string/show_hint" android:id="@+id/ButtonShowHint" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
 <TextView android:text="@+id/TextView" android:id="@+id/TextViewNumberHint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="15sp" android:visibility="invisible"></TextView>
 
 </LinearLayout>

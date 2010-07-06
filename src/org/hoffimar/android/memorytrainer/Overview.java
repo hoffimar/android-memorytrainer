@@ -58,7 +58,7 @@ public class Overview extends Activity {
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-    	menu.add(0, MENU_ABOUT, 0, "About");
+    	menu.add(0, MENU_ABOUT, 0, getString(R.string.main_about_button));
     	return true;
     }
     

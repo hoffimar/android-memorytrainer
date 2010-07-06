@@ -15,13 +15,13 @@ public class AboutActivity extends Activity {
 	    
 	    setContentView(R.layout.about);
 	    
-	    Button wikipediaButton = (Button) findViewById(R.id.Button01);
+	    Button wikipediaButton = (Button) findViewById(R.id.ButtonWikipedia);
 	    
 	    wikipediaButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://en.wikipedia.org/wiki/Method_of_loci")));
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.about_link_wikipedia))));
 			}
 		});
 	}

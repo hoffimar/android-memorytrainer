@@ -38,7 +38,7 @@ public class CheckLastNumberActivity extends Activity {
 				if (lastNumber.equals(numberUserInput)){
 					resultView.setText(R.string.result_number_right);
 				} else {
-					resultView.setText(R.string.result_number_wrong + "\nLast number: " + lastNumber + "\nYour input: " + numberUserInput);
+					resultView.setText(getString(R.string.result_number_wrong) + "\nLast number: " + lastNumber + "\nYour input: " + numberUserInput);
 				}
 				
 			}

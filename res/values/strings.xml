@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="hello">Hello World, Overview!</string>
 	<string name="app_name">Memory Trainer</string>
 	<string name="check_number_instructions">Please type in the number you recall from memory</string>
 	<string name="show_hint">Show hint</string>
 	<string name="hide_hint">Hide hint</string> 
 	<string name="result_number_right">Great!</string>
 	<string name="result_number_wrong">Wrong number!</string>
+	<string name="main_button_generate_number">Generate new number</string>
+	<string name="main_button_check_last_number">Type in last number</string>
+	<string name="main_button_maintain_list">Maintain list</string>
+	<string name="about_button_wikipedia">Method of loci on Wikipedia</string>
+	<string name="about_description">This app can help you in training your memory using the method of loci</string>
+	<string name="button_verify">Verify</string>
+	<string name="about_link_wikipedia">http://en.wikipedia.org/wiki/Method_of_loci</string>
+	<string name="main_about_button">About</string>
 </resources>

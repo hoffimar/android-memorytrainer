@@ -11,7 +11,7 @@
 			</intent-filter>
 		</activity>
 
-		<activity android:label="About" android:name="AboutActivity"></activity>
+		<activity android:name="AboutActivity"></activity>
 		<activity android:name="ListHundredActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.VIEW" />
@@ -21,7 +21,7 @@
 			</intent-filter>
 		</activity>
 		<activity android:name="GenerateNumberActivity"
-			android:label="Generate New Number" android:configChanges="keyboardHidden|orientation"></activity>
+			android:configChanges="keyboardHidden|orientation"></activity>
 		<activity android:name="CheckLastNumberActivity"></activity>
 	</application>
 

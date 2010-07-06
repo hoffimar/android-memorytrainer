@@ -1,12 +1,16 @@
-let the user specify pictures (URLs?) for the different numbers
-localization of the texts
-show hints (mapping to list items) for numbers -> in a nicer way
-make length of number to be memorized configurable
-find icons and nice buttons
-write test cases
-maintain statistics on how often the user was right
-make 100-list items editable, and uploadable to gdocs
-set up a wiki page
-detailed description what the app does, e.g. with a link to some (international) books (help dialog?)
-put in into the android market
-are there some more use cases (training methods) from the book?
+- make length of number to be memorized configurable
+- let the user specify pictures (URLs?) for the different numbers
+- show hints (mapping to list items) for numbers -> in a nicer way
+- find icons and nice buttons
+- write test cases
+- maintain statistics on how often the user was right
+- make 100-list items editable, and uploadable to gdocs
+- set up a wiki page
+- detailed description what the app does, e.g. with a link to some (international) books (help dialog?); how to maintain 100-list
+- put app into the android market
+- promote the app -> where?
+- are there some more use cases (training methods) from the book?
+
+**************
+regular tasks:
+- localization of the texts
