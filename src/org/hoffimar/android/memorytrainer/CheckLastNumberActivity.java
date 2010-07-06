@@ -3,6 +3,7 @@ package org.hoffimar.android.memorytrainer;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,7 +23,7 @@ public class CheckLastNumberActivity extends Activity {
 		setContentView(R.layout.check_number);
 
 		inputNumber = (EditText) findViewById(R.id.EditTextInputNumberFromMemory);
-		
+		inputNumber.setInputType(InputType.TYPE_CLASS_NUMBER);
 		resultView = (TextView) findViewById(R.id.TextViewNumberVerification);
 		
 		verifyNumberButton = (Button) findViewById(R.id.ButtonVerifyNumber);
@@ -35,9 +36,9 @@ public class CheckLastNumberActivity extends Activity {
 				String numberUserInput = inputNumber.getText().toString();
 				
 				if (lastNumber.equals(numberUserInput)){
-					resultView.setText("Great!");
+					resultView.setText(R.string.result_number_right);
 				} else {
-					resultView.setText("Wrong number!\nLast number: " + lastNumber + "\nYour input: " + numberUserInput);
+					resultView.setText(R.string.result_number_wrong + "\nLast number: " + lastNumber + "\nYour input: " + numberUserInput);
 				}
 				
 			}

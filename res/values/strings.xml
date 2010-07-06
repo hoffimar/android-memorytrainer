@@ -2,6 +2,9 @@
 <resources>
 	<string name="hello">Hello World, Overview!</string>
 	<string name="app_name">Memory Trainer</string>
-	<string name="check_number_instructions">Please type in the number you recall from memory
-	</string>
+	<string name="check_number_instructions">Please type in the number you recall from memory</string>
+	<string name="show_hint">Show hint</string>
+	<string name="hide_hint">Hide hint</string> 
+	<string name="result_number_right">Great!</string>
+	<string name="result_number_wrong">Wrong number!</string>
 </resources>

@@ -21,7 +21,7 @@
 			</intent-filter>
 		</activity>
 		<activity android:name="GenerateNumberActivity"
-			android:label="Generate New Number"></activity>
+			android:label="Generate New Number" android:configChanges="keyboardHidden|orientation"></activity>
 		<activity android:name="CheckLastNumberActivity"></activity>
 	</application>
 
