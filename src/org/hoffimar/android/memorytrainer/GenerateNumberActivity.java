@@ -1,15 +1,24 @@
 package org.hoffimar.android.memorytrainer;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class GenerateNumberActivity extends Activity {
+
+	private static final int MENU_DIGITS = 0;
+
+	private static final int DIALOG_DIGITS = 0;
 
 	private TextView generatedNumberTextView;
 	private TextView numberHintTextView;
@@ -21,20 +30,22 @@ public class GenerateNumberActivity extends Activity {
 
 		setContentView(R.layout.generate_number);
 
-		int digits = 10;
+		int digits = getNumberOfDigits();
 		String numberString = "";
 
-		// Generate new number
-		Long number = new Double(Math.random() * Math.pow(10, digits)).longValue();
-		Log.v(Constants.LOG_TAG, "Generated number : " + number);
-		numberString = number.toString();
-		if (numberString.length() < digits){
-			StringBuffer s = new StringBuffer(numberString);
-			for (int i = 0; i < digits - numberString.length(); i++){
-				s.insert(0, '0');
+		// Generate pairs of digits instead of 1 long
+		StringBuffer s = new StringBuffer(numberString);
+		for (int i = 0; i < digits / 2; i++) {
+			int twoDigits = new Double(Math.floor(Math.random() * 100 + 1)).intValue();
+			String asString = Integer.toString(twoDigits);
+			if (twoDigits < 10) {
+				s.append('0' + asString);
+			} else {
+				s.append(asString);
 			}
-			numberString = s.toString();
 		}
+		numberString = s.toString();
+		Log.v(Constants.LOG_TAG, numberString);
 
 		// Save new number to preferences
 		SharedPreferences settings = getSharedPreferences(Overview.PREFS_NAME, 0);
@@ -47,54 +58,51 @@ public class GenerateNumberActivity extends Activity {
 
 		showHintButton = (Button) findViewById(R.id.ButtonShowHint);
 		showHintButton.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				if (numberHintTextView.getVisibility() == View.INVISIBLE){
+				if (numberHintTextView.getVisibility() == View.INVISIBLE) {
 					numberHintTextView.setVisibility(View.VISIBLE);
 					showHintButton.setText(getString(R.string.hide_hint));
 				} else {
 					numberHintTextView.setVisibility(View.INVISIBLE);
 					showHintButton.setText(getString(R.string.show_hint));
 				}
-				
-				
+
 			}
 		});
-		
+
 		numberHintTextView = (TextView) findViewById(R.id.TextViewNumberHint);
 		numberHintTextView.setText(getSymbolsForNumber(numberString));
 	}
-	
+
 	@Override
 	public void onConfigurationChanged(Configuration newConfig) {
 		super.onConfigurationChanged(newConfig);
 		setContentView(R.layout.generate_number);
 
-		
 		SharedPreferences settings = getSharedPreferences(Overview.PREFS_NAME, 0);
 		String numberString = settings.getString("lastNumber", "");
-		
+
 		generatedNumberTextView = (TextView) findViewById(R.id.TextViewGeneratedNumber);
 		generatedNumberTextView.setText(groupNumbersInString(numberString));
 
 		showHintButton = (Button) findViewById(R.id.ButtonShowHint);
 		showHintButton.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				if (numberHintTextView.getVisibility() == View.INVISIBLE){
+				if (numberHintTextView.getVisibility() == View.INVISIBLE) {
 					numberHintTextView.setVisibility(View.VISIBLE);
 					showHintButton.setText(getString(R.string.hide_hint));
 				} else {
 					numberHintTextView.setVisibility(View.INVISIBLE);
 					showHintButton.setText(getString(R.string.show_hint));
 				}
-				
-				
+
 			}
 		});
-		
+
 		numberHintTextView = (TextView) findViewById(R.id.TextViewNumberHint);
 		numberHintTextView.setText(getSymbolsForNumber(numberString));
 	}
@@ -110,27 +118,91 @@ public class GenerateNumberActivity extends Activity {
 
 		return formatted.toString();
 	}
-	
-	private String getSymbolsForNumber(String numberString){
-		StringBuffer sb = new StringBuffer();
-		
+
+	private String getSymbolsForNumber(String numberString) {
+		StringBuffer sb = new StringBuffer("");
+
 		DbAdapter mDbHelper;
 		mDbHelper = new DbAdapter(this);
 		mDbHelper.open();
-		
-		for (int i = 0; i < numberString.length(); i = i + 2) {
-			int number = Integer.parseInt(numberString.substring(i, i + 2));
-			String symbol = mDbHelper.fetchListItem(number).getString(1);
-			sb.append(symbol);
-			sb.append(", ");
-			Log.v(Constants.LOG_TAG, symbol);
+
+		if (numberString.length() > 1) {
+			for (int i = 0; i < numberString.length(); i = i + 2) {
+				int number = Integer.parseInt(numberString.substring(i, i + 2));
+				String symbol = mDbHelper.fetchListItem(number).getString(1);
+				sb.append(symbol);
+				if (i < numberString.length() - 2){
+					sb.append(", ");
+				}
+				
+				// Log.v(Constants.LOG_TAG, symbol);
+			}
 		}
-		
+
 		mDbHelper.close();
-		
+
 		return sb.toString();
 	}
-	
-	
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+
+		menu.add(0, MENU_DIGITS, 0, getString(R.string.button_configure_digits));
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case MENU_DIGITS:
+			showDialog(DIALOG_DIGITS);
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	protected Dialog onCreateDialog(int id) {
+		Dialog dialog;
+		switch (id) {
+		case DIALOG_DIGITS:
+			dialog = null;
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+			builder.setTitle("Choose number of digits");
+			final String[] items = new String[50];
+			for (int i = 0; i < 100; i = i + 2) {
+				items[i / 2] = Integer.toString(i);
+			}
+			builder.setSingleChoiceItems(items, 5, new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// Save number of digits to preferences
+					SharedPreferences settings = getSharedPreferences(Overview.PREFS_NAME, 0);
+					SharedPreferences.Editor editor = settings.edit();
+					editor.putInt("digits", Integer.parseInt(items[which]));
+					editor.commit();
+					dialog.dismiss();
+				}
+			});
+			dialog = builder.create();
+			break;
+		default:
+			dialog = null;
+		}
+		return dialog;
+	}
+
+	/**
+	 * 
+	 * @return the length of the number to be remembered as stored in the shared
+	 *         preferences
+	 */
+	private int getNumberOfDigits() {
+		SharedPreferences settings = getSharedPreferences(Overview.PREFS_NAME, 0);
+		int digits = settings.getInt("digits", 10);
+		Log.v(Constants.LOG_TAG, "# digits: " + digits);
+		return digits;
+	}
 
 }

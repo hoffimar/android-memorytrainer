@@ -14,4 +14,5 @@
 	<string name="button_verify">Verify</string>
 	<string name="about_link_wikipedia">http://en.wikipedia.org/wiki/Method_of_loci</string>
 	<string name="main_about_button">About</string>
+	<string name="button_configure_digits">Change number of digits</string>
 </resources>
