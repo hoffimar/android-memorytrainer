@@ -5,6 +5,7 @@
 - show hints (mapping to list items) for numbers -> in a nicer way
 - find icons and nice buttons
 - maintain statistics on how often the user was right
+- error handling; working without gdocs list or no document
 
 ********************************************************
 nice to have:
