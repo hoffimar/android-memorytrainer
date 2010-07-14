@@ -35,11 +35,19 @@ public class CheckLastNumberActivity extends Activity {
 				String lastNumber = settings.getString("lastNumber", "");
 				String numberUserInput = inputNumber.getText().toString();
 				
+				DbAdapter mDbHelper;
+				mDbHelper = new DbAdapter(getApplicationContext());
+				mDbHelper.open();
+				
 				if (lastNumber.equals(numberUserInput)){
 					resultView.setText(R.string.result_number_right);
+					mDbHelper.createStatsItem(lastNumber, true);
 				} else {
 					resultView.setText(getString(R.string.result_number_wrong) + "\nLast number: " + lastNumber + "\nYour input: " + numberUserInput);
+					mDbHelper.createStatsItem(lastNumber, false);
 				}
+				
+				mDbHelper.close();
 				
 			}
 		});

@@ -15,4 +15,8 @@
 	<string name="about_link_wikipedia">http://de.wikipedia.org/wiki/Loci-Methode</string>
 	<string name="main_about_button">Info</string>
 	<string name="button_configure_digits">Länge der Zahl konfigurieren</string>
+	<string name="main_button_statistics">Statistiken</string>
+	<string name="stats_overview_num_correct">Richtige Eingaben</string>
+	<string name="stats_overview_num_incorrect">Falsche Eingaben</string>
+	<string name="stats_overview_percentage_correct">% richtiger Eingaben</string>
 </resources>

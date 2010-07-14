@@ -46,7 +46,7 @@ public class GenerateNumberActivity extends Activity {
 		}
 		numberString = s.toString();
 		Log.v(Constants.LOG_TAG, numberString);
-
+		
 		// Save new number to preferences
 		SharedPreferences settings = getSharedPreferences(Overview.PREFS_NAME, 0);
 		SharedPreferences.Editor editor = settings.edit();

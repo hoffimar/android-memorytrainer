@@ -3,12 +3,18 @@
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent">
 
-	
+
 	<Button android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:text="@string/main_button_generate_number" android:id="@+id/generateNumberButton"/>
+		android:layout_height="wrap_content" android:text="@string/main_button_generate_number"
+		android:id="@+id/generateNumberButton" />
 	<Button android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:text="@string/main_button_check_last_number" android:id="@+id/verifyNumberButton"/>
+		android:layout_height="wrap_content" android:text="@string/main_button_check_last_number"
+		android:id="@+id/verifyNumberButton" />
 	<Button android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:text="@string/main_button_maintain_list" android:id="@+id/maintainListButton"/>
-	
+		android:layout_height="wrap_content" android:text="@string/main_button_maintain_list"
+		android:id="@+id/maintainListButton" />
+	<Button android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="@string/main_button_statistics"
+		android:id="@+id/statisticsOverviewButton" />
+
 </LinearLayout>

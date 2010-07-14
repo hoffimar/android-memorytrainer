@@ -20,6 +20,7 @@ public class Overview extends Activity {
 	private Button maintainListButton;
 	private Button generateNumberButton;
 	private Button verifyNumberButton;
+	private Button statisticsButton;
 	
     /** Called when the activity is first created. */
     @Override
@@ -51,6 +52,15 @@ public class Overview extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent i = new Intent(v.getContext(), CheckLastNumberActivity.class);
+				startActivity(i);
+			}
+		});
+        
+        statisticsButton = (Button) findViewById(R.id.statisticsOverviewButton);
+        statisticsButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(v.getContext(), StatisticsOverviewActivity.class);
 				startActivity(i);
 			}
 		});
