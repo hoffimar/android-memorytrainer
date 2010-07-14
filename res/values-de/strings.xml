@@ -13,6 +13,7 @@
 	<string name="about_description">Diese App hilft ihnen, die Loci-Methode zu üben</string>
 	<string name="button_verify">Prüfen</string>
 	<string name="about_link_wikipedia">http://de.wikipedia.org/wiki/Loci-Methode</string>
+	<string name="about_description_wiki">Diese App ist Open Source, wenn du beitragen möchtest dann gehe auf </string>
 	<string name="main_about_button">Info</string>
 	<string name="button_configure_digits">Länge der Zahl konfigurieren</string>
 	<string name="main_button_statistics">Statistiken</string>

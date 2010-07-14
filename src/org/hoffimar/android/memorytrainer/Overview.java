@@ -69,6 +69,7 @@ public class Overview extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
     	menu.add(0, MENU_ABOUT, 0, getString(R.string.main_about_button));
+    	menu.findItem(MENU_ABOUT).setIcon(android.R.drawable.ic_menu_info_details);
     	return true;
     }
     

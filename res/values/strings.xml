@@ -6,6 +6,8 @@
 	<string name="hide_hint">Hide hint</string> 
 	<string name="result_number_right">Great!</string>
 	<string name="result_number_wrong">Wrong number!</string>
+	<string name="result_text_last_number">Great!</string>
+	<string name="result_text_input">Wrong number!</string>
 	<string name="main_button_generate_number">Generate new number</string>
 	<string name="main_button_check_last_number">Type in last number</string>
 	<string name="main_button_maintain_list">Maintain list</string>
@@ -13,10 +15,13 @@
 	<string name="about_description">This app can help you in training your memory using the method of loci</string>
 	<string name="button_verify">Verify</string>
 	<string name="about_link_wikipedia">http://en.wikipedia.org/wiki/Method_of_loci</string>
+	<string name="about_link_wiki">http://wiki.github.com/hoffimar/android-memorytrainer/</string>
+	<string name="about_description_wiki">This is an open source app, feel free to contribute. Just go to </string>
 	<string name="main_about_button">About</string>
 	<string name="button_configure_digits">Change number of digits</string>
 	<string name="main_button_statistics">Statistics</string>
 	<string name="stats_overview_num_correct">Correct numbers</string>
 	<string name="stats_overview_num_incorrect">Incorrect numbers</string>
 	<string name="stats_overview_percentage_correct">% of correct numbers</string>
+	
 </resources>

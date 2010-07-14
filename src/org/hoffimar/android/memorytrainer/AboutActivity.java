@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class AboutActivity extends Activity {
 
@@ -24,6 +25,9 @@ public class AboutActivity extends Activity {
 				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.about_link_wikipedia))));
 			}
 		});
+	    
+	    TextView textViewWiki = (TextView) findViewById(R.id.AboutTextViewWiki);
+	    textViewWiki.setText(getString(R.string.about_description_wiki) + " " + getString(R.string.about_link_wiki));
 	}
 
 }
