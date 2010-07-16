@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.SimpleCursorAdapter;
 
+import com.flurry.android.FlurryAgent;
 import com.google.api.client.apache.ApacheHttpTransport;
 import com.google.api.client.auth.oauth.OAuthCallbackUrl;
 import com.google.api.client.auth.oauth.OAuthCredentialsResponse;
@@ -249,5 +250,17 @@ public class ListHundredActivity extends ListActivity {
 		}
 
 	}
+	
+	@Override
+    protected void onStart() {
+    	super.onStart();
+    	FlurryAgent.onStartSession(this, "U7X84RNCY4CR1ZEP6G6Y");
+    }
+    
+    @Override
+    protected void onStop() {
+    	super.onStop();
+    	FlurryAgent.onEndSession(this);
+    }
 
 }

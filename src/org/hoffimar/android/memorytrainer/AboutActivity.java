@@ -1,5 +1,7 @@
 package org.hoffimar.android.memorytrainer;
 
+import com.flurry.android.FlurryAgent;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -29,5 +31,17 @@ public class AboutActivity extends Activity {
 	    TextView textViewWiki = (TextView) findViewById(R.id.AboutTextViewWiki);
 	    textViewWiki.setText(getString(R.string.about_description_wiki) + " " + getString(R.string.about_link_wiki));
 	}
+	
+	@Override
+    protected void onStart() {
+    	super.onStart();
+    	FlurryAgent.onStartSession(this, "U7X84RNCY4CR1ZEP6G6Y");
+    }
+    
+    @Override
+    protected void onStop() {
+    	super.onStop();
+    	FlurryAgent.onEndSession(this);
+    }
 
 }

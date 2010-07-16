@@ -1,5 +1,7 @@
 package org.hoffimar.android.memorytrainer;
 
+import com.flurry.android.FlurryAgent;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -105,6 +107,18 @@ public class GenerateNumberActivity extends Activity {
 
 		numberHintTextView = (TextView) findViewById(R.id.TextViewNumberHint);
 		numberHintTextView.setText(getSymbolsForNumber(numberString));
+	}
+	
+	@Override
+	protected void onStart() {
+		super.onStart();
+		FlurryAgent.onStartSession(this, "U7X84RNCY4CR1ZEP6G6Y");
+	}
+	
+	@Override
+	protected void onStop() {
+		super.onStop();
+		FlurryAgent.onEndSession(this);
 	}
 
 	private String groupNumbersInString(String unformattedNumber) {

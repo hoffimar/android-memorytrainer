@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.flurry.android.FlurryAgent;
+
 public class Overview extends Activity {
 	
 	public static final int MENU_ABOUT = 1;
@@ -64,6 +66,18 @@ public class Overview extends Activity {
 				startActivity(i);
 			}
 		});
+    }
+    
+    @Override
+    protected void onStart() {
+    	super.onStart();
+    	FlurryAgent.onStartSession(this, "U7X84RNCY4CR1ZEP6G6Y");
+    }
+    
+    @Override
+    protected void onStop() {
+    	super.onStop();
+    	FlurryAgent.onEndSession(this);
     }
     
     @Override

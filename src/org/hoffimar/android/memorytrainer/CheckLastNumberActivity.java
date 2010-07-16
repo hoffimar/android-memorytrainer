@@ -1,5 +1,7 @@
 package org.hoffimar.android.memorytrainer;
 
+import com.flurry.android.FlurryAgent;
+
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -52,5 +54,17 @@ public class CheckLastNumberActivity extends Activity {
 			}
 		});
 	}
+	
+	@Override
+    protected void onStart() {
+    	super.onStart();
+    	FlurryAgent.onStartSession(this, "U7X84RNCY4CR1ZEP6G6Y");
+    }
+    
+    @Override
+    protected void onStop() {
+    	super.onStop();
+    	FlurryAgent.onEndSession(this);
+    }
 
 }

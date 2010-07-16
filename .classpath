@@ -23,5 +23,6 @@
 	<classpathentry kind="lib" path="lib/gdata-2.2.1-alpha-client-googleapis-json.jar"/>
 	<classpathentry kind="lib" path="lib/gdata-2.2.1-alpha-client-googleapis-xml-atom.jar"/>
 	<classpathentry kind="lib" path="lib/gdata-2.2.1-alpha-client-json.jar"/>
+	<classpathentry kind="lib" path="/home/martin/prg/android/Flurry Android SDK v1.24/FlurryAgent.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
