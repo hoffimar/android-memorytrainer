@@ -172,45 +172,78 @@ public class ListHundredActivity extends ListActivity {
 
 		// Load data
 		try {
+
+			// Get spreadsheet feed for user
+			long timeBeforeRequest = System.currentTimeMillis();
 			HttpResponse response = request.execute();
+			long timeAfterRequest = System.currentTimeMillis();
+			Log.v(Constants.LOG_TAG_PERF, "Time for spreadsheet request: "
+					+ (timeAfterRequest - timeBeforeRequest) + "ms");
+
+			long timeBeforeParsing = System.currentTimeMillis();
 			UserFeed userFeed = response.parseAs(UserFeed.class);
+			long timeAfterParsing = System.currentTimeMillis();
+			Log.v(Constants.LOG_TAG_PERF, "Time for spreadsheet parsing: "
+					+ (timeAfterParsing - timeBeforeParsing) + "ms");
 
-			for (SpreadsheetEntry se : userFeed.spreadsheets) {
-				Log.v(Constants.LOG_TAG, "Spreadsheet title: " + se.title);
+			if (userFeed.spreadsheets != null) {
+				for (SpreadsheetEntry se : userFeed.spreadsheets) {
+					Log.v(Constants.LOG_TAG, "Spreadsheet title: " + se.title);
 
-				if (se.title.equalsIgnoreCase("MemorizeIt")) {
-					// Get worksheet feed url
-					GoogleUrl url = new GoogleUrl(se.getContentLink().replaceFirst("http:",
-							"https:"));
-					Log.v(Constants.LOG_TAG, url.toString());
+					if (se.title.equalsIgnoreCase("MemorizeIt")) {
+						// Get worksheet feed
+						GoogleUrl url = new GoogleUrl(se.getContentLink().replaceFirst("http:",
+								"https:"));
+						Log.v(Constants.LOG_TAG, url.toString());
 
-					// Execute request
-					HttpRequest request2 = transport.buildGetRequest();
-					request2.url = url;
-					response = request2.execute();
-					WorksheetsFeed worksheetsFeed = response.parseAs(WorksheetsFeed.class);
+						HttpRequest requestWorksheetFeed = transport.buildGetRequest();
+						requestWorksheetFeed.url = url;
 
-					// Get list feed
-					GoogleUrl listFeedUrl = new GoogleUrl(worksheetsFeed.worksheets.get(0)
-							.getCellsLink().replaceFirst("http:", "https:"));
-					HttpRequest request3 = transport.buildGetRequest();
-					request3.url = listFeedUrl;
-					Log.v(Constants.LOG_TAG, listFeedUrl.toString());
-					response = request3.execute();
-					CellFeed cellFeed = response.parseAs(CellFeed.class);
+						timeBeforeRequest = System.currentTimeMillis();
+						response = requestWorksheetFeed.execute();
+						timeAfterRequest = System.currentTimeMillis();
+						Log.v(Constants.LOG_TAG_PERF, "Time for worksheet request: "
+								+ (timeAfterRequest - timeBeforeRequest) + "ms");
 
-					int i = 0;
-					for (CellEntry cell : cellFeed.cells) {
-						if (cell.cell.col.equals("1")) {
-							i++;
-							mDbHelper.updateNote(i, cell.cell.inputValue, "");
+						timeBeforeParsing = System.currentTimeMillis();
+						WorksheetsFeed worksheetsFeed = response.parseAs(WorksheetsFeed.class);
+						timeAfterParsing = System.currentTimeMillis();
+						Log.v(Constants.LOG_TAG_PERF, "Time for worksheet parsing: "
+								+ (timeAfterParsing - timeBeforeParsing) + "ms");
+
+						// Get cells feed
+						GoogleUrl listFeedUrl = new GoogleUrl(worksheetsFeed.worksheets.get(0)
+								.getCellsLink().replaceFirst("http:", "https:"));
+						HttpRequest requestCellsFeed = transport.buildGetRequest();
+						requestCellsFeed.url = listFeedUrl;
+						Log.v(Constants.LOG_TAG, listFeedUrl.toString());
+
+						timeBeforeRequest = System.currentTimeMillis();
+						response = requestCellsFeed.execute();
+						timeAfterRequest = System.currentTimeMillis();
+						Log.v(Constants.LOG_TAG_PERF, "Time for cells request: "
+								+ (timeAfterRequest - timeBeforeRequest) + "ms");
+
+						timeBeforeParsing = System.currentTimeMillis();
+						CellFeed cellFeed = response.parseAs(CellFeed.class);
+						timeAfterParsing = System.currentTimeMillis();
+						Log.v(Constants.LOG_TAG_PERF, "Time for cells parsing: "
+								+ (timeAfterParsing - timeBeforeParsing) + "ms");
+
+						int i = 0;
+						for (CellEntry cell : cellFeed.cells) {
+							if (cell.cell.col.equals("1")) {
+								i++;
+								mDbHelper.updateNote(i, cell.cell.inputValue, "");
+							}
+
 						}
-
+						Log.v(Constants.LOG_TAG, "done reading...");
 					}
-					Log.v(Constants.LOG_TAG, "done reading...");
 				}
+			} else {
+				// TODO: no spreadsheets available for user
 			}
-
 		} catch (IOException e) {
 			Log.e(Constants.LOG_TAG, "Message: " + e.getMessage());
 		}
