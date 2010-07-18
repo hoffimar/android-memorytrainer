@@ -36,8 +36,23 @@ public class GenerateNumberActivity extends Activity {
 		setContentView(R.layout.generate_number);
 
 		int digits = getNumberOfDigits();
-		String numberString = "";
+		
+		String numberString = generateNumberString(digits);
+		Log.v(Constants.LOG_TAG, numberString);
 
+		// Flurry
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("generated number", numberString);
+		FlurryAgent.onEvent(Constants.FLURRY_EVENTID_GENERATE_NUMBER, map);
+
+		// Save new number to preferences
+		saveNumberToPrefs(numberString);
+
+		initUIElements(numberString);
+	}
+
+	private String generateNumberString(int digits) {
+		String numberString = "";
 		// Generate pairs of digits instead of 1 long
 		StringBuffer s = new StringBuffer(numberString);
 		for (int i = 0; i < digits / 2; i++) {
@@ -46,45 +61,23 @@ public class GenerateNumberActivity extends Activity {
 			if (twoDigits < 10) {
 				s.append('0' + asString);
 			} else {
-				s.append(asString);
+				if (twoDigits == 100) {
+					s.append("99");
+				} else {
+					s.append(asString);
+				}
 			}
 		}
 		numberString = s.toString();
-		Log.v(Constants.LOG_TAG, numberString);
-		
-		// Flurry
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("generated number", numberString);
-		FlurryAgent.onEvent(Constants.FLURRY_EVENTID_GENERATE_NUMBER, map);
-		
-		// Save new number to preferences
+		return numberString;
+	}
+
+	private void saveNumberToPrefs(String numberString) {
 		SharedPreferences settings = getSharedPreferences(Overview.PREFS_NAME, 0);
 		SharedPreferences.Editor editor = settings.edit();
 		editor.putString("lastNumber", numberString);
 		editor.commit();
-
-		generatedNumberTextView = (TextView) findViewById(R.id.TextViewGeneratedNumber);
-		generatedNumberTextView.setText(groupNumbersInString(numberString));
-
-		showHintButton = (Button) findViewById(R.id.ButtonShowHint);
-		showHintButton.setOnClickListener(new View.OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				if (numberHintTextView.getVisibility() == View.INVISIBLE) {
-					numberHintTextView.setVisibility(View.VISIBLE);
-					showHintButton.setText(getString(R.string.hide_hint));
-				} else {
-					numberHintTextView.setVisibility(View.INVISIBLE);
-					showHintButton.setText(getString(R.string.show_hint));
-				}
-
-			}
-		});
-
-		numberHintTextView = (TextView) findViewById(R.id.TextViewNumberHint);
-		numberHintTextView.setText(getSymbolsForNumber(numberString));
-	}
+	}	
 
 	@Override
 	public void onConfigurationChanged(Configuration newConfig) {
@@ -94,6 +87,10 @@ public class GenerateNumberActivity extends Activity {
 		SharedPreferences settings = getSharedPreferences(Overview.PREFS_NAME, 0);
 		String numberString = settings.getString("lastNumber", "");
 
+		initUIElements(numberString);
+	}
+	
+	private void initUIElements(String numberString) {
 		generatedNumberTextView = (TextView) findViewById(R.id.TextViewGeneratedNumber);
 		generatedNumberTextView.setText(groupNumbersInString(numberString));
 
@@ -116,13 +113,13 @@ public class GenerateNumberActivity extends Activity {
 		numberHintTextView = (TextView) findViewById(R.id.TextViewNumberHint);
 		numberHintTextView.setText(getSymbolsForNumber(numberString));
 	}
-	
+
 	@Override
 	protected void onStart() {
 		super.onStart();
 		FlurryAgent.onStartSession(this, Constants.FLURRY_ID);
 	}
-	
+
 	@Override
 	protected void onStop() {
 		super.onStop();
@@ -153,7 +150,7 @@ public class GenerateNumberActivity extends Activity {
 				int number = Integer.parseInt(numberString.substring(i, i + 2));
 				String symbol = mDbHelper.fetchListItem(number).getString(1);
 				sb.append(symbol);
-				if (i < numberString.length() - 2){
+				if (i < numberString.length() - 2) {
 					sb.append(", ");
 				}
 			}
@@ -192,7 +189,7 @@ public class GenerateNumberActivity extends Activity {
 			builder.setTitle("Choose number of digits");
 			final String[] items = new String[49];
 			for (int i = 2; i < 100; i = i + 2) {
-				items[(i/2) - 1] = Integer.toString(i);
+				items[(i / 2) - 1] = Integer.toString(i);
 			}
 			builder.setSingleChoiceItems(items, 4, new DialogInterface.OnClickListener() {
 				@Override
@@ -202,10 +199,14 @@ public class GenerateNumberActivity extends Activity {
 					SharedPreferences.Editor editor = settings.edit();
 					editor.putInt("digits", Integer.parseInt(items[which]));
 					editor.commit();
-					
+
 					Map<String, String> map = new HashMap<String, String>();
 					map.put("digits", items[which]);
 					FlurryAgent.onEvent(Constants.FLURRY_EVENTID_CHANGE_NUMBER_DIGITS, map);
+
+					String numberString = generateNumberString(Integer.parseInt(items[which]));
+					saveNumberToPrefs(numberString);
+					initUIElements(numberString);
 					
 					dialog.dismiss();
 				}

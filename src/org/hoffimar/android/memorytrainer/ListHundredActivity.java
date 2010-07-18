@@ -14,8 +14,6 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.SimpleCursorAdapter;
 
 import com.flurry.android.FlurryAgent;
@@ -37,8 +35,6 @@ import com.google.api.data.spreadsheet.v3.GoogleSpreadsheets;
 import com.google.api.data.spreadsheet.v3.atom.GoogleSpreadsheetsAtom;
 
 public class ListHundredActivity extends ListActivity {
-
-	private static final int MENU_IMPORT_SPREADSHEETS = 0;
 
 	private DbAdapter mDbHelper;
 	private Cursor mCursor;
@@ -85,23 +81,7 @@ public class ListHundredActivity extends ListActivity {
 				from, to);
 		setListAdapter(items);
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, MENU_IMPORT_SPREADSHEETS, 0, "Import from Google Spreadsheets");
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case MENU_IMPORT_SPREADSHEETS:
-			// TODO do something?
-			return true;
-		}
-		return false;
-	}
-
+	
 	private static OAuthHmacSigner createOAuthSigner() {
 		OAuthHmacSigner result = new OAuthHmacSigner();
 		if (credentials != null) {

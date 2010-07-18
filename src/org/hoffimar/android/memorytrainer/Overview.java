@@ -18,6 +18,7 @@ public class Overview extends Activity {
 	
 	public static final String PREFS_NAME = "MyPrefsFile";
 
+	private boolean enableUsageStatistics = false;
 	
 	private Button maintainListButton;
 	private Button generateNumberButton;
@@ -72,6 +73,10 @@ public class Overview extends Activity {
 				startActivity(i);
 			}
 		});
+        
+        if (!enableUsageStatistics){
+        	FlurryAgent.setLogEnabled(false);
+        }
         
         FlurryAgent.onEvent(Constants.FLURRY_EVENTID_OVERVIEW);
     }
