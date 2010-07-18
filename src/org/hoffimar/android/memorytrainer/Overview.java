@@ -18,7 +18,7 @@ public class Overview extends Activity {
 	
 	public static final String PREFS_NAME = "MyPrefsFile";
 
-	private boolean enableUsageStatistics = false;
+	private boolean enableUsageStatistics = true;
 	
 	private Button maintainListButton;
 	private Button generateNumberButton;

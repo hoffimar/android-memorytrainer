@@ -8,11 +8,11 @@
 		android:orientation="horizontal">
 		<TextView android:text="@string/stats_overview_num_correct"
 			android:id="@+id/StatsTextView01" android:layout_width="wrap_content"
-			android:layout_height="wrap_content"></TextView>
+			android:layout_height="wrap_content" style="@style/StatisticsFont"></TextView>
 		<TextView android:text="0" android:id="@+id/StatsTextView02"
 			android:gravity="right" android:layout_gravity="right"
 			android:layout_width="fill_parent" android:layout_height="wrap_content"
-			android:paddingLeft="20sp"></TextView>
+			android:paddingLeft="20sp" style="@style/StatisticsFont"></TextView>
 	</LinearLayout>
 
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -20,11 +20,11 @@
 		android:orientation="horizontal">
 		<TextView android:text="@string/stats_overview_num_incorrect"
 			android:id="@+id/StatsTextView03" android:layout_width="wrap_content"
-			android:layout_height="wrap_content"></TextView>
+			android:layout_height="wrap_content" style="@style/StatisticsFont"></TextView>
 		<TextView android:text="" android:id="@+id/StatsTextView04"
 			android:gravity="right" android:layout_gravity="right"
 			android:paddingLeft="20sp" android:layout_width="fill_parent"
-			android:layout_height="wrap_content"></TextView>
+			android:layout_height="wrap_content" style="@style/StatisticsFont"></TextView>
 	</LinearLayout>
 
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -32,11 +32,11 @@
 		android:orientation="horizontal">
 		<TextView android:text="@string/stats_overview_percentage_correct"
 			android:id="@+id/StatsTextView05" android:layout_width="wrap_content"
-			android:layout_height="wrap_content"></TextView>
+			android:layout_height="wrap_content" style="@style/StatisticsFont"></TextView>
 		<TextView android:text="" android:id="@+id/StatsTextView06"
 			android:gravity="right" android:layout_gravity="right"
 			android:paddingLeft="20sp" android:layout_width="fill_parent"
-			android:layout_height="wrap_content"></TextView>
+			android:layout_height="wrap_content" style="@style/StatisticsFont"></TextView>
 	</LinearLayout>
 
 

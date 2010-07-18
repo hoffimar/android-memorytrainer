@@ -1,6 +1,4 @@
-- show where the user was wrong when typing in a number (more detailed)
 - show hints (mapping to list items) for numbers -> in a nicer way
-- find icons and nice buttons
 - error handling; working without gdocs list or no document
 - features for new users: hardcoded list of 20 items to learn the technique
 - ask the user if usage data can be collected via flurry
@@ -14,6 +12,8 @@ nice to have:
 - maintain statistics on how often the user was right -> more of 'em (& nicer)
 	- how old were the numbers, how long were the numbers, ...
 - fix that the number '100' will not be generated (3 digits)
+- show where the user was wrong when typing in a number (more detailed: compare number by number)
+- find icons and nicer buttons?
 
 ********************************************************
 productization:
@@ -22,7 +22,6 @@ productization:
 - detailed description what the app does, e.g. with a link to some (international) books (help dialog?); how to maintain 100-list
 - put app into the android market
 - promote the app -> where?
-- analytics -> flurry etc.?
 
 ********************************************************
 future:
