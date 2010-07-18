@@ -1,6 +1,7 @@
 package org.hoffimar.android.memorytrainer;
 
-import com.flurry.android.FlurryAgent;
+import java.util.HashMap;
+import java.util.Map;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -15,6 +16,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.flurry.android.FlurryAgent;
 
 public class GenerateNumberActivity extends Activity {
 
@@ -48,6 +51,11 @@ public class GenerateNumberActivity extends Activity {
 		}
 		numberString = s.toString();
 		Log.v(Constants.LOG_TAG, numberString);
+		
+		// Flurry
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("generated number", numberString);
+		FlurryAgent.onEvent(Constants.FLURRY_EVENTID_GENERATE_NUMBER, map);
 		
 		// Save new number to preferences
 		SharedPreferences settings = getSharedPreferences(Overview.PREFS_NAME, 0);
@@ -112,7 +120,7 @@ public class GenerateNumberActivity extends Activity {
 	@Override
 	protected void onStart() {
 		super.onStart();
-		FlurryAgent.onStartSession(this, "U7X84RNCY4CR1ZEP6G6Y");
+		FlurryAgent.onStartSession(this, Constants.FLURRY_ID);
 	}
 	
 	@Override
@@ -148,8 +156,6 @@ public class GenerateNumberActivity extends Activity {
 				if (i < numberString.length() - 2){
 					sb.append(", ");
 				}
-				
-				// Log.v(Constants.LOG_TAG, symbol);
 			}
 		}
 
@@ -184,11 +190,11 @@ public class GenerateNumberActivity extends Activity {
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
 			builder.setTitle("Choose number of digits");
-			final String[] items = new String[50];
-			for (int i = 0; i < 100; i = i + 2) {
-				items[i / 2] = Integer.toString(i);
+			final String[] items = new String[49];
+			for (int i = 2; i < 100; i = i + 2) {
+				items[(i/2) - 1] = Integer.toString(i);
 			}
-			builder.setSingleChoiceItems(items, 5, new DialogInterface.OnClickListener() {
+			builder.setSingleChoiceItems(items, 4, new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					// Save number of digits to preferences
@@ -196,6 +202,11 @@ public class GenerateNumberActivity extends Activity {
 					SharedPreferences.Editor editor = settings.edit();
 					editor.putInt("digits", Integer.parseInt(items[which]));
 					editor.commit();
+					
+					Map<String, String> map = new HashMap<String, String>();
+					map.put("digits", items[which]);
+					FlurryAgent.onEvent(Constants.FLURRY_EVENTID_CHANGE_NUMBER_DIGITS, map);
+					
 					dialog.dismiss();
 				}
 			});

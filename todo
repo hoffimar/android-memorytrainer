@@ -5,6 +5,7 @@
 - show hints (mapping to list items) for numbers -> in a nicer way
 - find icons and nice buttons
 - error handling; working without gdocs list or no document
+- features for new users: hardcoded list of 20 items to learn the technique
 
 ********************************************************
 nice to have:
@@ -13,6 +14,7 @@ nice to have:
 - make 100-list items editable, and uploadable to gdocs
 - write test cases
 - maintain statistics on how often the user was right -> more of 'em (& nicer)
+	- how old were the numbers, how long were the numbers, ...
 
 ********************************************************
 productization:
@@ -27,6 +29,7 @@ productization:
 future:
 ********************************************************
 - are there some more use cases (training methods) from the book?
+- exchange flurry against google analytics
 
 ********************************************************
 regular tasks:

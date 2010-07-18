@@ -1,5 +1,8 @@
 package org.hoffimar.android.memorytrainer;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.flurry.android.FlurryAgent;
 
 import android.app.Activity;
@@ -41,15 +44,21 @@ public class CheckLastNumberActivity extends Activity {
 				mDbHelper = new DbAdapter(getApplicationContext());
 				mDbHelper.open();
 				
-				if (lastNumber.equals(numberUserInput)){
+				boolean isInputCorrect = lastNumber.equals(numberUserInput);
+				if (isInputCorrect){
 					resultView.setText(R.string.result_number_right);
 					mDbHelper.createStatsItem(lastNumber, true);
 				} else {
-					resultView.setText(getString(R.string.result_number_wrong) + "\nLast number: " + lastNumber + "\nYour input: " + numberUserInput);
+					resultView.setText(getString(R.string.result_number_wrong) + "\n" + getString(R.string.check_number_last_number_label) + ": " + lastNumber + "\n" + getString(R.string.check_number_your_input_label) + ": " + numberUserInput);
 					mDbHelper.createStatsItem(lastNumber, false);
 				}
 				
 				mDbHelper.close();
+				
+				
+				Map<String, String> map = new HashMap<String, String>();
+				map.put("input correct?", Boolean.toString(isInputCorrect));
+				FlurryAgent.onEvent(Constants.FLURRY_EVENTID_CHECK_NUMBER_BUTTON, map);
 				
 			}
 		});
@@ -58,7 +67,7 @@ public class CheckLastNumberActivity extends Activity {
 	@Override
     protected void onStart() {
     	super.onStart();
-    	FlurryAgent.onStartSession(this, "U7X84RNCY4CR1ZEP6G6Y");
+    	FlurryAgent.onStartSession(this, Constants.FLURRY_ID);
     }
     
     @Override

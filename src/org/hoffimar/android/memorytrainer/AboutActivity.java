@@ -30,12 +30,14 @@ public class AboutActivity extends Activity {
 	    
 	    TextView textViewWiki = (TextView) findViewById(R.id.AboutTextViewWiki);
 	    textViewWiki.setText(getString(R.string.about_description_wiki) + " " + getString(R.string.about_link_wiki));
+	    
+	    FlurryAgent.onEvent(Constants.FLURRY_EVENTID_ABOUT);
 	}
 	
 	@Override
     protected void onStart() {
     	super.onStart();
-    	FlurryAgent.onStartSession(this, "U7X84RNCY4CR1ZEP6G6Y");
+    	FlurryAgent.onStartSession(this, Constants.FLURRY_ID);
     }
     
     @Override

@@ -23,5 +23,6 @@
 	<string name="stats_overview_num_correct">Correct numbers</string>
 	<string name="stats_overview_num_incorrect">Incorrect numbers</string>
 	<string name="stats_overview_percentage_correct">% of correct numbers</string>
-	
+	<string name="check_number_your_input_label">Your input</string>
+	<string name="check_number_last_number_label">Last number</string>
 </resources>

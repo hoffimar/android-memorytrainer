@@ -50,7 +50,7 @@ public class DbAdapter {
 			db.execSQL(LIST_TABLE_CREATE);
 
 			for (int i = 1; i <= 100; i++) {
-				db.execSQL("INSERT INTO " + LIST_TABLE_NAME + " VALUES(" + i + ", '', '')");
+				db.execSQL("INSERT INTO " + LIST_TABLE_NAME + " VALUES(" + i + ", '-', '')");
 			}
 
 			db.execSQL(STATS_TABLE_CREATE);

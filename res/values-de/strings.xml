@@ -20,4 +20,6 @@
 	<string name="stats_overview_num_correct">Richtige Eingaben</string>
 	<string name="stats_overview_num_incorrect">Falsche Eingaben</string>
 	<string name="stats_overview_percentage_correct">% richtiger Eingaben</string>
+	<string name="check_number_your_input_label">Deine Eingabe</string>
+	<string name="check_number_last_number_label">Letzte Zahl</string>
 </resources>

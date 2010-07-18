@@ -66,12 +66,14 @@ public class StatisticsOverviewActivity extends Activity {
 			percCorrectTextView.setText("-");
 		}
 		
+		FlurryAgent.onEvent(Constants.FLURRY_EVENTID_STATS_OVERVIEW);
+		
 	}
 	
 	@Override
     protected void onStart() {
     	super.onStart();
-    	FlurryAgent.onStartSession(this, "U7X84RNCY4CR1ZEP6G6Y");
+    	FlurryAgent.onStartSession(this, Constants.FLURRY_ID);
     }
     
     @Override

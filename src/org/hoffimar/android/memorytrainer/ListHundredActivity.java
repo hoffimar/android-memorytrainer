@@ -53,8 +53,6 @@ public class ListHundredActivity extends ListActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		// setContentView(R.layout.listhundred_item);
-
 		mDbHelper = new DbAdapter(this);
 		mDbHelper.open();
 
@@ -134,7 +132,7 @@ public class ListHundredActivity extends ListActivity {
 				temporaryToken.signer = createOAuthSigner();
 				temporaryToken.consumerKey = "anonymous";
 				temporaryToken.scope = GoogleSpreadsheets.ROOT_URL;
-				temporaryToken.displayName = "Spreadsheets Atom XML Sample for the GData Java library";
+				temporaryToken.displayName = "Memory Trainer (access to google spreadsheets)";
 				temporaryToken.callback = "memorize-it:///";
 				isTemporary = true;
 				credentials = temporaryToken.execute();
@@ -191,7 +189,7 @@ public class ListHundredActivity extends ListActivity {
 				for (SpreadsheetEntry se : userFeed.spreadsheets) {
 					Log.v(Constants.LOG_TAG, "Spreadsheet title: " + se.title);
 
-					if (se.title.equalsIgnoreCase("MemorizeIt")) {
+					if (se.title.equalsIgnoreCase("MemorizeIt") || se.title.equalsIgnoreCase("MemoryTrainer")) {
 						// Get worksheet feed
 						GoogleUrl url = new GoogleUrl(se.getContentLink().replaceFirst("http:",
 								"https:"));
@@ -254,7 +252,7 @@ public class ListHundredActivity extends ListActivity {
 	@Override
     protected void onStart() {
     	super.onStart();
-    	FlurryAgent.onStartSession(this, "U7X84RNCY4CR1ZEP6G6Y");
+    	FlurryAgent.onStartSession(this, Constants.FLURRY_ID);
     }
     
     @Override

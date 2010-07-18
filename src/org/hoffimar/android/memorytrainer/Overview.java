@@ -36,6 +36,9 @@ public class Overview extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent i = new Intent(v.getContext(), ListHundredActivity.class);
+				
+				FlurryAgent.onEvent(Constants.FLURRY_EVENTID_MAINTAIN_LISTS);
+				
 				startActivity(i);
 			}
 		});
@@ -54,6 +57,9 @@ public class Overview extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent i = new Intent(v.getContext(), CheckLastNumberActivity.class);
+				
+				FlurryAgent.onEvent(Constants.FLURRY_EVENTID_CHECK_NUMBER_ACTIVITY);
+				
 				startActivity(i);
 			}
 		});
@@ -66,12 +72,14 @@ public class Overview extends Activity {
 				startActivity(i);
 			}
 		});
+        
+        FlurryAgent.onEvent(Constants.FLURRY_EVENTID_OVERVIEW);
     }
     
     @Override
     protected void onStart() {
     	super.onStart();
-    	FlurryAgent.onStartSession(this, "U7X84RNCY4CR1ZEP6G6Y");
+    	FlurryAgent.onStartSession(this, Constants.FLURRY_ID);
     }
     
     @Override
