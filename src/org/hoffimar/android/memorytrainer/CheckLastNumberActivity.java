@@ -49,7 +49,21 @@ public class CheckLastNumberActivity extends Activity {
 					resultView.setText(R.string.result_number_right);
 					mDbHelper.createStatsItem(lastNumber, true);
 				} else {
-					resultView.setText(getString(R.string.result_number_wrong) + "\n" + getString(R.string.check_number_last_number_label) + ": " + lastNumber + "\n" + getString(R.string.check_number_your_input_label) + ": " + numberUserInput);
+					StringBuilder sb = new StringBuilder(50);
+					sb.append(getString(R.string.result_number_wrong));
+					sb.append("\n\n");
+					if (lastNumber.length() != numberUserInput.length()){
+						sb.append(getString(R.string.check_number_wrong_length));
+						sb.append("\n");
+						sb.append(getString(R.string.check_number_last_number_label) + ": " + lastNumber.length() + "\n");
+						sb.append(getString(R.string.check_number_your_input_label) + ": " + numberUserInput.length());
+						sb.append("\n\n");
+					}
+					
+					sb.append(getString(R.string.check_number_last_number_label) + ": " + lastNumber + "\n");
+					sb.append(getString(R.string.check_number_your_input_label) + ": " + numberUserInput);
+					
+					resultView.setText(sb.toString());
 					mDbHelper.createStatsItem(lastNumber, false);
 				}
 				
@@ -63,17 +77,17 @@ public class CheckLastNumberActivity extends Activity {
 			}
 		});
 	}
-	
+
 	@Override
-    protected void onStart() {
-    	super.onStart();
-    	FlurryAgent.onStartSession(this, Constants.FLURRY_ID);
-    }
-    
-    @Override
-    protected void onStop() {
-    	super.onStop();
-    	FlurryAgent.onEndSession(this);
-    }
+	protected void onStart() {
+		super.onStart();
+		FlurryAgent.onStartSession(this, Constants.FLURRY_ID);
+	}
+
+	@Override
+	protected void onStop() {
+		super.onStop();
+		FlurryAgent.onEndSession(this);
+	}
 
 }

@@ -25,4 +25,7 @@
 	<string name="stats_overview_percentage_correct">% of correct numbers</string>
 	<string name="check_number_your_input_label">Your input</string>
 	<string name="check_number_last_number_label">Last number</string>
+	<string name="check_number_your_input_length_label">Length of your input</string>
+	<string name="check_number_last_number_length_label">Length of last number</string>
+	<string name="check_number_wrong_length">The length of your number is wrong:</string>
 </resources>

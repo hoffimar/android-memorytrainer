@@ -12,13 +12,13 @@
 		android:layout_width="fill_parent" android:layout_height="wrap_content"
 		android:orientation="vertical">
 		<EditText android:id="@+id/EditTextInputNumberFromMemory"
-			android:layout_width="fill_parent" 
-			android:layout_height="wrap_content"></EditText>
+			android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
 		<Button android:text="@string/button_verify" android:id="@+id/ButtonVerifyNumber"
 			android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
 	</LinearLayout>
 
 	<TextView android:id="@+id/TextViewNumberVerification"
-		android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		style="@style/CheckNumberFont"></TextView>
 
 </LinearLayout>
