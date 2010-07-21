@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="wrap_content" android:layout_height="wrap_content"
-	android:orientation="vertical">
-
-
-
-	<TextView android:text="@string/check_number_instructions"
-		android:id="@+id/TextViewInstructionsCheckNumber"
-		android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent">
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-		android:layout_width="fill_parent" android:layout_height="wrap_content"
-		android:orientation="vertical">
-		<EditText android:id="@+id/EditTextInputNumberFromMemory"
-			android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
-		<Button android:text="@string/button_verify" android:id="@+id/ButtonVerifyNumber"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
-	</LinearLayout>
-
-	<TextView android:id="@+id/TextViewNumberVerification"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
-		style="@style/CheckNumberFont"></TextView>
+		android:orientation="vertical">
 
-</LinearLayout>
+
+
+		<TextView android:text="@string/check_number_instructions"
+			android:id="@+id/TextViewInstructionsCheckNumber"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:orientation="vertical">
+			<EditText android:id="@+id/EditTextInputNumberFromMemory"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
+			<Button android:text="@string/button_verify" android:id="@+id/ButtonVerifyNumber"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+		</LinearLayout>
+
+		<TextView android:id="@+id/TextViewNumberVerification"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			style="@style/CheckNumberFont"></TextView>
+
+	</LinearLayout>
+</ScrollView>

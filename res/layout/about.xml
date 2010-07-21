@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="wrap_content" android:layout_height="wrap_content"
-	android:orientation="vertical">
-	<TextView android:text="@string/about_description" android:id="@+id/TextViewAbout"
-		android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
-	<Button android:text="@string/about_button_wikipedia"
-		android:id="@+id/ButtonWikipedia" android:layout_width="wrap_content"
-		android:layout_height="wrap_content"></Button>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent">
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:orientation="vertical">
+		<TextView android:text="@string/about_description"
+			android:id="@+id/TextViewAbout" android:layout_width="wrap_content"
+			android:layout_height="wrap_content"></TextView>
+		<Button android:text="@string/about_button_wikipedia"
+			android:id="@+id/ButtonWikipedia" android:layout_width="wrap_content"
+			android:layout_height="wrap_content"></Button>
 
-	<TextView android:id="@+id/AboutTextViewWiki"
-		android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
-</LinearLayout>
+		<TextView android:id="@+id/AboutTextViewWiki"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+	</LinearLayout>
+</ScrollView>

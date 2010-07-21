@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
 
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent">
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical" android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+		<Button android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:text="@string/main_button_generate_number"
+			android:id="@+id/generateNumberButton" android:drawableLeft="@drawable/add" />
+		<Button android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:text="@string/main_button_check_last_number"
+			android:id="@+id/verifyNumberButton" android:drawableLeft="@drawable/calculator" />
+		<Button android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:text="@string/main_button_maintain_list"
+			android:id="@+id/maintainListButton" android:drawableLeft="@drawable/list" />
+		<Button android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:text="@string/main_button_statistics"
+			android:id="@+id/statisticsOverviewButton" android:drawableLeft="@drawable/stats" />
 
-	<Button android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:text="@string/main_button_generate_number"
-		android:id="@+id/generateNumberButton" android:drawableLeft="@drawable/add" />
-	<Button android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:text="@string/main_button_check_last_number"
-		android:id="@+id/verifyNumberButton" android:drawableLeft="@drawable/calculator" />
-	<Button android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:text="@string/main_button_maintain_list"
-		android:id="@+id/maintainListButton" android:drawableLeft="@drawable/list" />
-	<Button android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:text="@string/main_button_statistics"
-		android:id="@+id/statisticsOverviewButton" android:drawableLeft="@drawable/stats" />
-
-</LinearLayout>
+	</LinearLayout>
+</ScrollView>
