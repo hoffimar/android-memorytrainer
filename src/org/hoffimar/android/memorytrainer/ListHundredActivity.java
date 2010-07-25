@@ -8,7 +8,10 @@ import org.hoffimar.android.memorytrainer.model.SpreadsheetEntry;
 import org.hoffimar.android.memorytrainer.model.UserFeed;
 import org.hoffimar.android.memorytrainer.model.WorksheetsFeed;
 
+import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -112,7 +115,7 @@ public class ListHundredActivity extends ListActivity {
 				temporaryToken.signer = createOAuthSigner();
 				temporaryToken.consumerKey = "anonymous";
 				temporaryToken.scope = GoogleSpreadsheets.ROOT_URL;
-				temporaryToken.displayName = "Memory Trainer (access to google spreadsheets)";
+				temporaryToken.displayName = getString(R.string.app_name);
 				temporaryToken.callback = "memorize-it:///";
 				isTemporary = true;
 				credentials = temporaryToken.execute();
@@ -146,6 +149,9 @@ public class ListHundredActivity extends ListActivity {
 
 	private void authenticated() {
 
+		ProgressDialog progressDialog = ProgressDialog.show(this, "", 
+                "Loading. Please wait...", true);
+		
 		HttpRequest request = transport.buildGetRequest();
 		request.url = new GoogleUrl(GoogleSpreadsheets.ROOT_URL + "spreadsheets/private/full");
 
@@ -169,7 +175,7 @@ public class ListHundredActivity extends ListActivity {
 				for (SpreadsheetEntry se : userFeed.spreadsheets) {
 					Log.v(Constants.LOG_TAG, "Spreadsheet title: " + se.title);
 
-					if (se.title.equalsIgnoreCase("MemorizeIt") || se.title.equalsIgnoreCase("MemoryTrainer")) {
+					if (se.title.equalsIgnoreCase(Constants.SPREADSHEET_TITLE_1) || se.title.equalsIgnoreCase(Constants.SPREADSHEET_TITLE_2)) {
 						// Get worksheet feed
 						GoogleUrl url = new GoogleUrl(se.getContentLink().replaceFirst("http:",
 								"https:"));
@@ -221,10 +227,22 @@ public class ListHundredActivity extends ListActivity {
 					}
 				}
 			} else {
-				// TODO: no spreadsheets available for user
+				AlertDialog.Builder builder = new AlertDialog.Builder(this);
+				builder.setMessage(getString(R.string.list_hundred_no_spreadsheet_available))
+				       .setCancelable(true)
+				       .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+				           public void onClick(DialogInterface dialog, int id) {
+				                dialog.dismiss();
+				           }
+				       });
+				       
+				AlertDialog alert = builder.create();
+				alert.show();
 			}
 		} catch (IOException e) {
 			Log.e(Constants.LOG_TAG, "Message: " + e.getMessage());
+		} finally {
+			progressDialog.dismiss();
 		}
 
 	}

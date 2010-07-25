@@ -3,7 +3,7 @@
 	package="org.hoffimar.android.memorytrainer" android:versionCode="1"
 	android:versionName="1.0">
 	<application android:label="@string/app_name"
-		android:debuggable="true" android:icon="@drawable/creep005">
+		android:debuggable="true" android:icon="@drawable/logo">
 		<activity android:name=".Overview" android:label="@string/app_name">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
@@ -24,6 +24,7 @@
 			android:configChanges="keyboardHidden|orientation"></activity>
 		<activity android:name="CheckLastNumberActivity"></activity>
 	<activity android:name="StatisticsOverviewActivity"></activity>
+
 </application>
 
 	<uses-sdk android:minSdkVersion="4"></uses-sdk>

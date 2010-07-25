@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Memory Trainer</string>
+	<string name="app_name">Loci Method Trainer</string>
 	<string name="check_number_instructions">Please type in the number you recall from memory</string>
 	<string name="show_hint">Show hint</string>
 	<string name="hide_hint">Hide hint</string> 
@@ -28,4 +28,5 @@
 	<string name="check_number_your_input_length_label">Length of your input</string>
 	<string name="check_number_last_number_length_label">Length of last number</string>
 	<string name="check_number_wrong_length">The length of your number is wrong:</string>
+	<string name="list_hundred_no_spreadsheet_available">Please create a spreadsheet at Google Docs with the title \'MemoryTrainer\', see the documentation under \'First steps\'</string>
 </resources>

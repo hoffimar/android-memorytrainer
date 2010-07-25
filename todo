@@ -1,7 +1,11 @@
-- show hints (mapping to list items) for numbers -> in a nicer way
+- first steps activity
+
 - error handling; working without gdocs list or no document
 - features for new users: hardcoded list of 20 items to learn the technique
-- ask the user if usage data can be collected via flurry
+- ask the user if usage data can be collected via flurry (-> off by default, settings dialog)
+- settings activity?
+- change back button behaviour for MaintainListActivity? don't show browser again
+- show hints (mapping to list items) for numbers -> in a nicer way
 
 ********************************************************
 nice to have:
