@@ -9,7 +9,7 @@ public class Constants {
 	public static final String SPREADSHEET_TITLE_1 = "MemorizeIt";
 	public static final String SPREADSHEET_TITLE_2 = "MemoryTrainer";
 	
-	public static final String FLURRY_ID = "U7X84RNCY4CR1ZEP6G6Y";
+	public static final String FLURRY_ID = "U7X84RNCY4CR1ZEP6G6Y"; // development environment ID
 	public static final String FLURRY_EVENTID_CHANGE_NUMBER_DIGITS = "set number of digits";
 	public static final String FLURRY_EVENTID_GENERATE_NUMBER = "generate new number";
 	public static final String FLURRY_EVENTID_STATS_OVERVIEW = "open statistics overview";

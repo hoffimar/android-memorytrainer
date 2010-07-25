@@ -1,12 +1,11 @@
 package org.hoffimar.android.memorytrainer;
 
-import com.flurry.android.FlurryAgent;
-
 import android.app.Activity;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
+
+import com.flurry.android.FlurryAgent;
 
 public class StatisticsOverviewActivity extends Activity {
 
@@ -32,8 +31,8 @@ public class StatisticsOverviewActivity extends Activity {
 		int countIncorrect = 0;
 		
 		while (statsCursor.moveToNext()){
-			String date = statsCursor.getString(1);
-			String number = statsCursor.getString(2);
+//			String date = statsCursor.getString(1);
+//			String number = statsCursor.getString(2);
 			int isCorrect = statsCursor.getInt(3);
 			
 			if (isCorrect == 0){
@@ -42,7 +41,6 @@ public class StatisticsOverviewActivity extends Activity {
 				countCorrect++;
 			}
 			
-			Log.v(Constants.LOG_TAG, "Stats entry: " + date + ';' + number + ';' + isCorrect);
 		}
 		
 		mDbHelper.close();
@@ -51,10 +49,6 @@ public class StatisticsOverviewActivity extends Activity {
 		if (countCorrect + countIncorrect != 0){
 			percentageCorrect = (new Double(countCorrect) / (countCorrect + countIncorrect)) * 100;
 		}
-		
-		
-		Log.v(Constants.LOG_TAG, "correct: " + countCorrect + ", incorrect: " + countIncorrect + ", %: " + percentageCorrect);
-		
 		
 		
 		correctTextView.setText(Integer.toString(countCorrect));

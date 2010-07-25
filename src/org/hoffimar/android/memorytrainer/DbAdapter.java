@@ -146,7 +146,6 @@ public class DbAdapter {
 		Date now = new Date();// TODO: fix timezone 'bug'
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 		String datetime = dateFormat.format(now);
-		Log.v(Constants.LOG_TAG, "timestamp for statistics: " + datetime);
 		
 		ContentValues initialValues = new ContentValues();
 //		initialValues.put(KEY_ID, id);//autoincrement

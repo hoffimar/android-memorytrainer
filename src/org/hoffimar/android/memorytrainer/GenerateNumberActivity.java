@@ -10,7 +10,6 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,9 +35,8 @@ public class GenerateNumberActivity extends Activity {
 		setContentView(R.layout.generate_number);
 
 		int digits = getNumberOfDigits();
-		
+
 		String numberString = generateNumberString(digits);
-		Log.v(Constants.LOG_TAG, numberString);
 
 		// Flurry
 		Map<String, String> map = new HashMap<String, String>();
@@ -77,7 +75,7 @@ public class GenerateNumberActivity extends Activity {
 		SharedPreferences.Editor editor = settings.edit();
 		editor.putString("lastNumber", numberString);
 		editor.commit();
-	}	
+	}
 
 	@Override
 	public void onConfigurationChanged(Configuration newConfig) {
@@ -89,7 +87,7 @@ public class GenerateNumberActivity extends Activity {
 
 		initUIElements(numberString);
 	}
-	
+
 	private void initUIElements(String numberString) {
 		generatedNumberTextView = (TextView) findViewById(R.id.TextViewGeneratedNumber);
 		generatedNumberTextView.setText(groupNumbersInString(numberString));
@@ -132,8 +130,6 @@ public class GenerateNumberActivity extends Activity {
 			formatted.append(unformattedNumber.substring(i, i + 2));
 			formatted.append(" ");
 		}
-		Log.v(Constants.LOG_TAG, "unformatted: " + unformattedNumber);
-		Log.v(Constants.LOG_TAG, "formatted  : " + formatted);
 
 		return formatted.toString();
 	}
@@ -207,7 +203,7 @@ public class GenerateNumberActivity extends Activity {
 					String numberString = generateNumberString(Integer.parseInt(items[which]));
 					saveNumberToPrefs(numberString);
 					initUIElements(numberString);
-					
+
 					dialog.dismiss();
 				}
 			});
@@ -227,7 +223,6 @@ public class GenerateNumberActivity extends Activity {
 	private int getNumberOfDigits() {
 		SharedPreferences settings = getSharedPreferences(Overview.PREFS_NAME, 0);
 		int digits = settings.getInt("digits", 10);
-		Log.v(Constants.LOG_TAG, "# digits: " + digits);
 		return digits;
 	}
 

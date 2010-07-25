@@ -84,7 +84,7 @@ public class ListHundredActivity extends ListActivity {
 				from, to);
 		setListAdapter(items);
 	}
-	
+
 	private static OAuthHmacSigner createOAuthSigner() {
 		OAuthHmacSigner result = new OAuthHmacSigner();
 		if (credentials != null) {
@@ -149,9 +149,9 @@ public class ListHundredActivity extends ListActivity {
 
 	private void authenticated() {
 
-		ProgressDialog progressDialog = ProgressDialog.show(this, "", 
-                "Loading. Please wait...", true);
-		
+		ProgressDialog progressDialog = ProgressDialog.show(this, "", "Loading. Please wait...",
+				true);
+
 		HttpRequest request = transport.buildGetRequest();
 		request.url = new GoogleUrl(GoogleSpreadsheets.ROOT_URL + "spreadsheets/private/full");
 
@@ -175,11 +175,11 @@ public class ListHundredActivity extends ListActivity {
 				for (SpreadsheetEntry se : userFeed.spreadsheets) {
 					Log.v(Constants.LOG_TAG, "Spreadsheet title: " + se.title);
 
-					if (se.title.equalsIgnoreCase(Constants.SPREADSHEET_TITLE_1) || se.title.equalsIgnoreCase(Constants.SPREADSHEET_TITLE_2)) {
+					if (se.title.equalsIgnoreCase(Constants.SPREADSHEET_TITLE_1)
+							|| se.title.equalsIgnoreCase(Constants.SPREADSHEET_TITLE_2)) {
 						// Get worksheet feed
 						GoogleUrl url = new GoogleUrl(se.getContentLink().replaceFirst("http:",
 								"https:"));
-						Log.v(Constants.LOG_TAG, url.toString());
 
 						HttpRequest requestWorksheetFeed = transport.buildGetRequest();
 						requestWorksheetFeed.url = url;
@@ -201,7 +201,6 @@ public class ListHundredActivity extends ListActivity {
 								.getCellsLink().replaceFirst("http:", "https:"));
 						HttpRequest requestCellsFeed = transport.buildGetRequest();
 						requestCellsFeed.url = listFeedUrl;
-						Log.v(Constants.LOG_TAG, listFeedUrl.toString());
 
 						timeBeforeRequest = System.currentTimeMillis();
 						response = requestCellsFeed.execute();
@@ -229,13 +228,13 @@ public class ListHundredActivity extends ListActivity {
 			} else {
 				AlertDialog.Builder builder = new AlertDialog.Builder(this);
 				builder.setMessage(getString(R.string.list_hundred_no_spreadsheet_available))
-				       .setCancelable(true)
-				       .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-				           public void onClick(DialogInterface dialog, int id) {
-				                dialog.dismiss();
-				           }
-				       });
-				       
+						.setCancelable(true).setPositiveButton("OK",
+								new DialogInterface.OnClickListener() {
+									public void onClick(DialogInterface dialog, int id) {
+										dialog.dismiss();
+									}
+								});
+
 				AlertDialog alert = builder.create();
 				alert.show();
 			}
@@ -246,17 +245,17 @@ public class ListHundredActivity extends ListActivity {
 		}
 
 	}
-	
+
 	@Override
-    protected void onStart() {
-    	super.onStart();
-    	FlurryAgent.onStartSession(this, Constants.FLURRY_ID);
-    }
-    
-    @Override
-    protected void onStop() {
-    	super.onStop();
-    	FlurryAgent.onEndSession(this);
-    }
+	protected void onStart() {
+		super.onStart();
+		FlurryAgent.onStartSession(this, Constants.FLURRY_ID);
+	}
+
+	@Override
+	protected void onStop() {
+		super.onStop();
+		FlurryAgent.onEndSession(this);
+	}
 
 }
