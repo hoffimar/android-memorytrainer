@@ -20,6 +20,7 @@ public class Overview extends Activity {
 
 	private boolean enableUsageStatistics = true;
 	
+	private Button informationButton;
 	private Button maintainListButton;
 	private Button generateNumberButton;
 	private Button verifyNumberButton;
@@ -31,6 +32,17 @@ public class Overview extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
+        informationButton = (Button) findViewById(R.id.InformationButton);
+        informationButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(v.getContext(), InformationActivity.class);
+				
+				FlurryAgent.onEvent(Constants.FLURRY_EVENTID_FIRST_STEPS);
+				
+				startActivity(i);
+			}
+		});
         
         maintainListButton = (Button) findViewById(R.id.maintainListButton);
         maintainListButton.setOnClickListener(new View.OnClickListener() {

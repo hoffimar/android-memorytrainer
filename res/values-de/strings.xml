@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">Loci Method Trainer</string>
-	<string name="check_number_instructions">Bitte gib die letzte Zahl aus dem Gedächtnis ein</string>
+	<string name="check_number_instructions">Bitte gib die letzte Zahl aus dem Gedächtnis ein
+	</string>
 	<string name="show_hint">Hinweis anzeigen</string>
-	<string name="hide_hint">Hinweis verbergen</string> 
+	<string name="hide_hint">Hinweis verbergen</string>
 	<string name="result_number_right">Richtig!</string>
 	<string name="result_number_wrong">Falsche Zahl!</string>
+	<string name="main_button_information">Erste Schritte</string>
 	<string name="main_button_generate_number">Neue Zahl generieren</string>
 	<string name="main_button_check_last_number">Letzte Zahl eingeben</string>
 	<string name="main_button_maintain_list">Liste verwalten</string>
 	<string name="about_button_wikipedia">Loci-Methode bei Wikipedia</string>
-	<string name="about_description">Diese App hilft ihnen, die Loci-Methode zu üben</string>
+	<string name="about_description">Diese App hilft ihnen, die Loci-Methode zu üben
+	</string>
 	<string name="button_verify">Prüfen</string>
 	<string name="about_link_wikipedia">http://de.wikipedia.org/wiki/Loci-Methode</string>
-	<string name="about_description_wiki">Diese App ist Open Source, wenn du beitragen möchtest dann gehe auf </string>
+	<string name="about_description_wiki">Diese App ist Open Source, wenn du beitragen
+		möchtest dann gehe auf </string>
 	<string name="main_about_button">Info</string>
 	<string name="button_configure_digits">Länge der Zahl konfigurieren</string>
 	<string name="main_button_statistics">Statistiken</string>
@@ -25,5 +29,36 @@
 	<string name="check_number_your_input_length_label">Länge deiner Eingabe</string>
 	<string name="check_number_last_number_length_label">Länge der richtigen Zahl</string>
 	<string name="check_number_wrong_length">Die Länge deiner Zahl ist falsch:</string>
-	<string name="list_hundred_no_spreadsheet_available">Bitte erstelle eine Tabelle bei Google Docs mit dem Titel \'MemoryTrainer\', siehe Dokumentation unter \'Erste Schritte\'</string>
+	<string name="list_hundred_no_spreadsheet_available">Bitte erstelle eine Tabelle bei Google Docs mit dem
+		Titel \'MemoryTrainer\', siehe Dokumentation unter \'Erste Schritte\'
+	</string>
+
+	<string name="intro">Diese App kann dir helfen, die Loci-Methode zu
+		trainieren. Dadurch kannst du dir z.B. lange Zahlenfolgen merken,
+		indem du daraus eine Geschichte mit einzelnen Gegenständen oder Personen
+		baust.
+		</string>
+	<string name="first_steps">So funktioniert die App:\n
+		1. Gehe auf \"Neue Zahl
+		generieren\" und versuche dir die Zahl einzuprägen. Drücke Menu um die
+		Länge der Zahl einzustellen.
+		Am besten prägst du dir die Zahl ein, wenn
+		du sie in Ziffernpaare einteilst und jeder nun 2-stelligen Zahl einen
+		(fixen)
+		Gegenstand, Lebewesen o.ä. zuordnest. Nun kannst du dir eine
+		Geschichte ausdenken, die nacheinander die assoziierten Gegenstände
+		enthält. Unten steht, wie du die Gegenstände abspeicherst sodass sie
+		angezeigt werden.\n
+		2. Gehe zu \"letzte Zahl eingeben\" und tippe die
+		gemerkte Zahlenfolge ein. Drücke auf \"Prüfen\" um zu sehen ob du
+		richtig lagst.\n
+		3. Unter Statistiken kannst du sehen wie oft du
+		richtig lagst.\n
+		4. Um die mit den Ziffern assoziierten Gegenstände zu
+		sehen, solltest du zu docs.google.com gehen und dort eine Tabelle mit
+		dem Namen \"MemoryTrainer\" anlegen. Dort, trage in die ersten 100
+		Zeilen die Gegenstände in die Spalte A ein.\n
+		Gehe zur Homepage des
+		Entwicklers um eine längere Beschreibung zu sehen.
+	</string>
 </resources>

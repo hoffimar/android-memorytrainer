@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">Loci Method Trainer</string>
-	<string name="check_number_instructions">Please type in the number you recall from memory</string>
+	<string name="check_number_instructions">Please type in the number you recall from memory
+	</string>
 	<string name="show_hint">Show hint</string>
-	<string name="hide_hint">Hide hint</string> 
+	<string name="hide_hint">Hide hint</string>
 	<string name="result_number_right">Great!</string>
 	<string name="result_number_wrong">Wrong number!</string>
 	<string name="result_text_last_number">Great!</string>
 	<string name="result_text_input">Wrong number!</string>
+	<string name="main_button_information">First steps</string>
 	<string name="main_button_generate_number">Generate new number</string>
 	<string name="main_button_check_last_number">Type in last number</string>
 	<string name="main_button_maintain_list">Maintain list</string>
 	<string name="about_button_wikipedia">Method of loci on Wikipedia</string>
-	<string name="about_description">This app can help you in training your memory using the method of loci</string>
+	<string name="about_description">This app can help you in training your memory using
+		the method of loci</string>
 	<string name="button_verify">Verify</string>
-	<string name="about_link_wikipedia">http://en.wikipedia.org/wiki/Method_of_loci</string>
-	<string name="about_link_wiki">http://wiki.github.com/hoffimar/android-memorytrainer/</string>
-	<string name="about_description_wiki">This is an open source app, feel free to contribute. Just go to </string>
+	<string name="about_link_wikipedia">http://en.wikipedia.org/wiki/Method_of_loci
+	</string>
+	<string name="about_link_wiki">http://wiki.github.com/hoffimar/android-memorytrainer/
+	</string>
+	<string name="about_description_wiki">This is an open source app, feel free to
+		contribute. Just go to </string>
 	<string name="main_about_button">About</string>
 	<string name="button_configure_digits">Change number of digits</string>
 	<string name="main_button_statistics">Statistics</string>
@@ -28,5 +34,48 @@
 	<string name="check_number_your_input_length_label">Length of your input</string>
 	<string name="check_number_last_number_length_label">Length of last number</string>
 	<string name="check_number_wrong_length">The length of your number is wrong:</string>
-	<string name="list_hundred_no_spreadsheet_available">Please create a spreadsheet at Google Docs with the title \'MemoryTrainer\', see the documentation under \'First steps\'</string>
+	<string name="list_hundred_no_spreadsheet_available">Please create a spreadsheet at Google Docs with the
+		title \'MemoryTrainer\', see the documentation under \'First steps\'
+	</string>
+
+	<string name="intro">This app is all about the loci method. This method
+	helps you in e.g. memorizing large numbers by creating a story using
+	images instead of the numbers itself.</string>
+	<string name="first_steps">This is how the app works:\n
+		1. Click
+		on generate
+		number and try to memorize it. You can press menu
+		to
+		specify the length
+		of the number. To memorize it, break it down into
+		pairs of digits, and
+		associate each 2-digit number with some item,
+		animal, ... (you can
+		create a spreadsheet at google docs as described
+		below so you can see
+		which item belongs to the different numbers). You
+		usually create a
+		story or walkthrough which uses the numbers and items
+		you set up.\n
+		2.
+		After you have memorized the numbers go back and go to
+		type in last
+		number. There, press verify to see if you were right.
+		Each try will be
+		recorded and save to your statistics.\n
+		3. Press
+		statistics to see how
+		often you were right or wrong.\n
+		4. You should go
+		to docs.google.com and
+		create a spreadsheet named \"MemoryTrainer\".
+		There, in column \'A\'
+		fill in an item, animal, or person that you can
+		associate with the
+		respective row number. E.g., use \'unicorn\' in row
+		1. For row 5 you
+		could use \'hand\'. Check out the developer\'s
+		homepage to see an even
+		lengthier description.
+	</string>
 </resources>
