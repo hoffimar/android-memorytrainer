@@ -28,6 +28,8 @@
 <activity android:name="TreeListActivity"></activity>
 <activity android:name="TreeListGenerateActivity"></activity>
 <activity android:name="TreeListVerifyActivity"></activity>
+<activity android:name="MaintainListActivity"></activity>
+<activity android:name="EditItemActivity"></activity>
 </application>
 
 	<uses-sdk android:minSdkVersion="4"></uses-sdk>

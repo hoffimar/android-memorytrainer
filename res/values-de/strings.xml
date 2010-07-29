@@ -8,7 +8,7 @@
 	<string name="result_number_right">Richtig!</string>
 	<string name="result_number_wrong">Falsche Zahl!</string>
 	<string name="main_button_treelist">Demo der Loci-Methode</string>
-	<string name="main_button_information">Help</string>
+	<string name="main_button_information">Hilfe</string>
 	<string name="main_button_generate_number">Neue Zahl generieren</string>
 	<string name="main_button_check_last_number">Letzte Zahl eingeben</string>
 	<string name="main_button_maintain_list">Liste verwalten</string>
@@ -34,6 +34,11 @@
 		Titel \'MemoryTrainer\', siehe Dokumentation unter \'Erste Schritte\'
 	</string>
 
+	<string name="download_spreadsheets">Import von Google Spreadsheets</string>
+	<string name="edit_item_label">Gegenstand für die Nummer </string>
+	<string name="edit_item_button_save">Speichern</string>
+
+	<!-- Help -->
 	<string name="intro">Diese App kann dir helfen, die Loci-Methode zu
 		trainieren. Dadurch kannst du dir z.B. lange Zahlenfolgen merken,
 		indem du daraus eine Geschichte mit einzelnen Gegenständen oder
@@ -57,11 +62,16 @@
 		3. Unter Statistiken kannst du sehen wie oft du
 		richtig lagst.\n
 		4. Um die mit den Ziffern assoziierten Gegenstände zu
-		sehen, solltest du zu docs.google.com gehen und dort eine Tabelle mit
-		dem Namen \"MemoryTrainer\" anlegen. Dort, trage in die ersten 100
-		Zeilen die Gegenstände in die Spalte A ein.\n
+		sehen, kannst du diese unter Liste verwalten eingeben. Oder du gehst
+		zu docs.google.com gehen und legst dort eine Tabelle mit
+		dem Namen
+		\"MemoryTrainer\" an. Trage dort in die ersten 100
+		Zeilen die
+		Gegenstände in die Spalte A ein. Unter \'Liste verwalten\'/Menu kannst
+		du dann die Liste importieren.\n
 		Gehe zur Homepage des
-		Entwicklers um eine längere Beschreibung zu sehen.
+		Entwicklers um
+		eine längere Beschreibung zu sehen.
 	</string>
 
 
@@ -94,12 +104,19 @@
 	<string name="treelist_generate_button_hint">Zeige Gegenstände</string>
 
 	<!-- Treelist Verify Number -->
-	<string name="treelist_verify_intro_text">Tippe jetzt die Zahlen in derselben Reihenfolge ein, indem du die Geschichte im Kopf durchgehst.
-	Prüfe dann, ob du richtig liegst.
+	<string name="treelist_verify_intro_text">Tippe jetzt die Zahlen in derselben Reihenfolge
+		ein, indem du die Geschichte im Kopf durchgehst.
+		Prüfe dann, ob du
+		richtig liegst.
 	</string>
 	<string name="treelist_verify_button">Prüfen</string>
-	<string name="treelist_verify_dialog_positive">Gut gemacht! Du hast soeben die Grundlagen der Loci-Methode erfolgreich angewandt.
-	Du kannst jetzt zurück zum Hauptmenü gehen und es dort mit längeren Zahlenfolgen (und bis zu 100 Gegenständen versuchen).
+	<string name="treelist_verify_dialog_positive">Gut gemacht! Du hast soeben die Grundlagen der
+		Loci-Methode erfolgreich angewandt.
+		Du kannst jetzt zurück zum
+		Hauptmenü gehen und es dort mit längeren
+		Zahlenfolgen (und bis zu 100
+		Gegenständen versuchen).
 	</string>
-	<string name="treelist_verify_dialog_negative">Deine Zahlenfolge stimmt nicht überein, versuche es noch einmal.</string>
+	<string name="treelist_verify_dialog_negative">Deine Zahlenfolge stimmt nicht überein, versuche es
+		noch einmal.</string>
 </resources>

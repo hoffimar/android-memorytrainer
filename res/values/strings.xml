@@ -39,6 +39,11 @@
 		title \'MemoryTrainer\', see the documentation under \'First steps\'
 	</string>
 
+	<string name="download_spreadsheets">Download from Google Spreadsheets</string>
+	<string name="edit_item_label">Enter the item for the number </string>
+	<string name="edit_item_button_save">Save</string>
+
+	<!-- Help -->
 	<string name="intro">This app is all about the loci method. This method
 		helps you in e.g. memorizing large numbers by creating a story using
 		images instead of the numbers itself.</string>
@@ -67,7 +72,8 @@
 		3. Press
 		statistics to see how
 		often you were right or wrong.\n
-		4. You should go
+		4. Go to \'Maintain list\' to maintain
+		the items for all 100 numbers. You can also go
 		to docs.google.com and
 		create a spreadsheet named \"MemoryTrainer\".
 		There, in column \'A\'
@@ -111,7 +117,8 @@
 	<string name="treelist_verify_button">Verify</string>
 	<string name="treelist_verify_dialog_positive">Well done! This is how the loci method basically
 		works. You could now go back to the main screen and try with some
-		larger numbers and a list of 100 items (read the help there if needed).</string>
+		larger numbers and a list of 100 items (read the help there if
+		needed).</string>
 	<string name="treelist_verify_dialog_negative">Your number doesn\'t match, try again.</string>
 
 </resources>

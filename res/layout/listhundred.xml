@@ -10,8 +10,8 @@
 
 	<TextView android:text="" android:id="@+id/TextViewID"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
-		android:textSize="20sp" android:width="30sp"></TextView>
+		android:textSize="20sp" android:width="40sp"></TextView>
 	<TextView android:text="" android:id="@+id/TextViewSymbol"
-		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
 		android:textSize="20sp" android:paddingLeft="5sp"></TextView>
 </LinearLayout>

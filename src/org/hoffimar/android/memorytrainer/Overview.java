@@ -61,7 +61,7 @@ public class Overview extends Activity {
         maintainListButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(v.getContext(), ListHundredActivity.class);
+				Intent i = new Intent(v.getContext(), MaintainListActivity.class);
 				
 				FlurryAgent.onEvent(Constants.FLURRY_EVENTID_MAINTAIN_LISTS);
 				

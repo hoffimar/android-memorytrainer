@@ -7,7 +7,8 @@
 		<TextView android:text="@+id/TextView" android:id="@+id/TextViewGeneratedNumber"
 			style="@style/GenerateNumberFont"></TextView>
 		<Button android:text="@string/show_hint" android:id="@+id/ButtonShowHint"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"></Button>
 		<TextView android:text="@+id/TextView" android:id="@+id/TextViewNumberHint"
 			android:layout_width="wrap_content" android:layout_height="wrap_content"
 			android:textSize="15sp" android:visibility="invisible"></TextView>

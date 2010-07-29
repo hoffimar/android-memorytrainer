@@ -64,6 +64,7 @@ public class ListHundredActivity extends ListActivity {
 		gotAccount(false);
 
 		fillData();
+		
 	}
 
 	private void fillData() {
@@ -149,7 +150,7 @@ public class ListHundredActivity extends ListActivity {
 
 	private void authenticated() {
 
-		ProgressDialog progressDialog = ProgressDialog.show(this, "", "Loading. Please wait...",
+		ProgressDialog progressDialog = ProgressDialog.show(this , "", "Loading. Please wait...",
 				true);
 
 		HttpRequest request = transport.buildGetRequest();

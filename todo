@@ -1,6 +1,5 @@
-- make 100-list items editable
-
-Next release:
+- close database correctly, leak
+- performance
 - chinese translation
 - db upgrade working?
 - MaintainListActivity: 
