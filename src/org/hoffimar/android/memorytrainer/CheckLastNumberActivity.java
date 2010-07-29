@@ -20,7 +20,6 @@ public class CheckLastNumberActivity extends Activity {
 	Button verifyNumberButton;
 	TextView resultView;
 
-	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -28,7 +27,7 @@ public class CheckLastNumberActivity extends Activity {
 		setContentView(R.layout.check_number);
 
 		inputNumber = (EditText) findViewById(R.id.EditTextInputNumberFromMemory);
-		inputNumber.setInputType(InputType.TYPE_CLASS_NUMBER);
+		inputNumber.setInputType(InputType.TYPE_CLASS_PHONE);
 		resultView = (TextView) findViewById(R.id.TextViewNumberVerification);
 		
 		verifyNumberButton = (Button) findViewById(R.id.ButtonVerifyNumber);
