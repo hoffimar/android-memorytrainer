@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="org.hoffimar.android.memorytrainer" android:versionCode="1"
-	android:versionName="1.0">
+	package="org.hoffimar.android.memorytrainer" android:versionName="1.0.1" android:versionCode="2">
 	<application android:label="@string/app_name"
 		android:icon="@drawable/logo" android:debuggable="false">
 		<activity android:name=".Overview" android:label="@string/app_name">
@@ -26,6 +25,9 @@
 	<activity android:name="StatisticsOverviewActivity"></activity>
 
 <activity android:name="InformationActivity"></activity>
+<activity android:name="TreeListActivity"></activity>
+<activity android:name="TreeListGenerateActivity"></activity>
+<activity android:name="TreeListVerifyActivity"></activity>
 </application>
 
 	<uses-sdk android:minSdkVersion="4"></uses-sdk>

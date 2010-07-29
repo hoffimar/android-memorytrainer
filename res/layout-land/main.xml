@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_gravity="center_horizontal">
+
+	<TableLayout android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:gravity="center" android:layout_gravity="center">
+		<TableRow android:layout_width="fill_parent"
+			android:layout_height="fill_parent" android:gravity="center">
+			<Button android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="@string/main_button_treelist"
+				android:id="@+id/TreelistButton" android:drawableLeft="@drawable/information" />
+			<Button android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="@string/main_button_generate_number"
+				android:id="@+id/generateNumberButton" android:drawableLeft="@drawable/add" />
+		</TableRow>
+
+		<TableRow android:layout_width="fill_parent"
+			android:layout_height="fill_parent" android:gravity="center">
+			<Button android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="@string/main_button_check_last_number"
+				android:id="@+id/verifyNumberButton" android:drawableLeft="@drawable/calculator" />
+			<Button android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="@string/main_button_maintain_list"
+				android:id="@+id/maintainListButton" android:drawableLeft="@drawable/list" />
+		</TableRow>
+
+		<TableRow android:layout_width="fill_parent"
+			android:layout_height="fill_parent" android:gravity="center">
+			<Button android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="@string/main_button_statistics"
+				android:id="@+id/statisticsOverviewButton" android:drawableLeft="@drawable/stats" />
+			<Button android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="@string/main_button_information"
+				android:id="@+id/InformationButton" android:drawableLeft="@drawable/help" />
+		</TableRow>
+	</TableLayout>
+</ScrollView>

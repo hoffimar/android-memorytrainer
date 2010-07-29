@@ -20,6 +20,7 @@ public class Overview extends Activity {
 
 	private boolean enableUsageStatistics = true;
 	
+	private Button treelistButton;
 	private Button informationButton;
 	private Button maintainListButton;
 	private Button generateNumberButton;
@@ -31,6 +32,18 @@ public class Overview extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        
+        treelistButton = (Button) findViewById(R.id.TreelistButton);
+        treelistButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(v.getContext(), TreeListActivity.class);
+				
+				FlurryAgent.onEvent(Constants.FLURRY_EVENTID_TREELIST_INTRO);
+				
+				startActivity(i);
+			}
+		});
         
         informationButton = (Button) findViewById(R.id.InformationButton);
         informationButton.setOnClickListener(new View.OnClickListener() {

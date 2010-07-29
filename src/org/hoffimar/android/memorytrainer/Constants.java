@@ -15,8 +15,16 @@ public class Constants {
 	public static final String FLURRY_EVENTID_STATS_OVERVIEW = "open statistics overview";
 	public static final String FLURRY_EVENTID_OVERVIEW = "open application";
 	public static final String FLURRY_EVENTID_ABOUT = "open about dialog";
+	public static final String FLURRY_EVENTID_TREELIST_INTRO = "tree list opened";
 	public static final String FLURRY_EVENTID_FIRST_STEPS = "first steps";
-	public static final String FLURRY_EVENTID_MAINTAIN_LISTS = "open maintain lists dialog";
+	
 	public static final String FLURRY_EVENTID_CHECK_NUMBER_ACTIVITY = "open check last number activity";
 	public static final String FLURRY_EVENTID_CHECK_NUMBER_BUTTON = "checked last number";
+	
+	public static final String FLURRY_EVENTID_MAINTAIN_LISTS = "open maintain lists dialog";
+	public static final String FLURRY_EVENTID_MAINTAIN_LIST_DOWNLOAD_ERROR = "spreadsheet download - ERROR";
+	public static final String FLURRY_EVENTID_MAINTAIN_LIST_DONE_READING = "spreadsheet download: SUCCESS";
+	public static final String FLURRY_EVENTID_TREELIST_GENERATE = "treelist: generate number";
+	public static final String FLURRY_EVENTID_TREELIST_VERIFY = "treelist: verify number screen";
+	public static final String FLURRY_EVENTID_TREELIST_VERIFY_CLICKVERIFY = "treelist: verify number";
 }

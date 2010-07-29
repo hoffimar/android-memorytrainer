@@ -6,8 +6,8 @@
 		android:orientation="vertical" android:layout_width="fill_parent"
 		android:layout_height="wrap_content">
 		<Button android:layout_width="fill_parent"
-			android:layout_height="wrap_content" android:text="@string/main_button_information"
-			android:id="@+id/InformationButton" android:drawableLeft="@drawable/information" />
+			android:layout_height="wrap_content" android:text="@string/main_button_treelist"
+			android:id="@+id/TreelistButton" android:drawableLeft="@drawable/information" />
 		<Button android:layout_width="fill_parent"
 			android:layout_height="wrap_content" android:text="@string/main_button_generate_number"
 			android:id="@+id/generateNumberButton" android:drawableLeft="@drawable/add" />
@@ -20,6 +20,8 @@
 		<Button android:layout_width="fill_parent"
 			android:layout_height="wrap_content" android:text="@string/main_button_statistics"
 			android:id="@+id/statisticsOverviewButton" android:drawableLeft="@drawable/stats" />
-
+		<Button android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:text="@string/main_button_information"
+			android:id="@+id/InformationButton" android:drawableLeft="@drawable/help" />
 	</LinearLayout>
 </ScrollView>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="wrap_content"
+	android:layout_height="wrap_content" android:gravity="center_horizontal">
+
+	<TextView android:id="@+id/TreeListGenerateIntro"
+		android:text="@string/treelist_generate_intro_text"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+
+
+
+	<ScrollView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:padding="5sp">
+
+		<LinearLayout android:orientation="vertical"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:gravity="center_horizontal">
+			<TableLayout android:orientation="vertical"
+				android:layout_width="wrap_content" android:layout_height="wrap_content">
+
+				<TableRow>
+					<TextView android:id="@+id/treelist_generate_tv_1" style="@style/TreelistItemStyle"></TextView>
+					<TextView android:id="@+id/TreeListGenerateItem01" style="@style/TreelistItemStyle"
+						android:visibility="invisible"></TextView>
+				</TableRow>
+
+				<TableRow>
+					<TextView android:id="@+id/treelist_generate_tv_2" style="@style/TreelistItemStyle"></TextView>
+					<TextView android:id="@+id/TreeListGenerateItem02" style="@style/TreelistItemStyle"
+						android:visibility="invisible"></TextView>
+				</TableRow>
+
+				<TableRow>
+					<TextView android:id="@+id/treelist_generate_tv_3" style="@style/TreelistItemStyle"></TextView>
+					<TextView android:id="@+id/TreeListGenerateItem03" style="@style/TreelistItemStyle"
+						android:visibility="invisible"></TextView>
+				</TableRow>
+
+				<TableRow>
+					<TextView android:id="@+id/treelist_generate_tv_4" style="@style/TreelistItemStyle"></TextView>
+					<TextView android:id="@+id/TreeListGenerateItem04" style="@style/TreelistItemStyle"
+						android:visibility="invisible"></TextView>
+				</TableRow>
+
+				<TableRow>
+					<TextView android:id="@+id/treelist_generate_tv_5" style="@style/TreelistItemStyle"></TextView>
+					<TextView android:id="@+id/TreeListGenerateItem05" style="@style/TreelistItemStyle"
+						android:visibility="invisible"></TextView>
+				</TableRow>
+
+
+			</TableLayout>
+
+
+
+			<LinearLayout android:orientation="horizontal"
+				android:layout_width="wrap_content" android:layout_height="wrap_content">
+				<Button android:id="@+id/TreeListGenerateHintButton"
+					android:text="@string/treelist_generate_button_hint"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+				<Button android:id="@+id/TreeListGenerateContinueButton"
+					android:text="@string/treelist_generate_button_continue"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>
+

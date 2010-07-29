@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="wrap_content"
+	android:layout_height="wrap_content" android:gravity="center_horizontal">
+
+	<TextView android:id="@+id/TreeListVerifyIntro" android:text="@string/treelist_verify_intro_text"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+
+
+
+	<ScrollView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:padding="5sp">
+		<LinearLayout android:orientation="vertical"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:gravity="center_horizontal">
+
+			<TableLayout android:orientation="vertical"
+				android:layout_width="wrap_content" android:layout_height="wrap_content">
+
+				<TableRow>
+					<EditText android:id="@+id/TreeListVerifyField1"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:inputType="phone" android:minEms="2"></EditText>
+				</TableRow>
+
+				<TableRow>
+					<EditText android:id="@+id/TreeListVerifyField2"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:inputType="phone" android:minEms="2"></EditText>
+				</TableRow>
+
+				<TableRow>
+					<EditText android:id="@+id/TreeListVerifyField3"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:inputType="phone" android:minEms="2"></EditText>
+				</TableRow>
+
+				<TableRow>
+					<EditText android:id="@+id/TreeListVerifyField4"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:inputType="phone" android:minEms="2"></EditText>
+				</TableRow>
+
+				<TableRow>
+					<EditText android:id="@+id/TreeListVerifyField5"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:inputType="phone" android:minEms="2"></EditText>
+				</TableRow>
+
+			</TableLayout>
+
+
+			<Button android:id="@+id/TreeListVerifyButton" android:text="@string/treelist_verify_button"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>
+

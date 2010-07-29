@@ -223,6 +223,7 @@ public class ListHundredActivity extends ListActivity {
 
 						}
 						Log.v(Constants.LOG_TAG, "done reading...");
+						FlurryAgent.onEvent(Constants.FLURRY_EVENTID_MAINTAIN_LIST_DONE_READING);
 					}
 				}
 			} else {
@@ -236,6 +237,7 @@ public class ListHundredActivity extends ListActivity {
 								});
 
 				AlertDialog alert = builder.create();
+				FlurryAgent.onEvent(Constants.FLURRY_EVENTID_MAINTAIN_LIST_DOWNLOAD_ERROR);
 				alert.show();
 			}
 		} catch (IOException e) {

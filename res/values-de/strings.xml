@@ -7,7 +7,8 @@
 	<string name="hide_hint">Hinweis verbergen</string>
 	<string name="result_number_right">Richtig!</string>
 	<string name="result_number_wrong">Falsche Zahl!</string>
-	<string name="main_button_information">Erste Schritte</string>
+	<string name="main_button_treelist">Demo der Loci-Methode</string>
+	<string name="main_button_information">Help</string>
 	<string name="main_button_generate_number">Neue Zahl generieren</string>
 	<string name="main_button_check_last_number">Letzte Zahl eingeben</string>
 	<string name="main_button_maintain_list">Liste verwalten</string>
@@ -35,7 +36,8 @@
 
 	<string name="intro">Diese App kann dir helfen, die Loci-Methode zu
 		trainieren. Dadurch kannst du dir z.B. lange Zahlenfolgen merken,
-		indem du daraus eine Geschichte mit einzelnen Gegenständen oder Personen
+		indem du daraus eine Geschichte mit einzelnen Gegenständen oder
+		Personen
 		baust.
 		</string>
 	<string name="first_steps">So funktioniert die App:\n
@@ -61,4 +63,43 @@
 		Gehe zur Homepage des
 		Entwicklers um eine längere Beschreibung zu sehen.
 	</string>
+
+
+	<!-- Treelist -->
+	<string name="treelist_intro_text">Das ist die Baumliste (von 1 bis 10). Jeder Zahl
+		ist fest ein Gegenstand zugeordnet, der Grund dafür
+		steht in Klammern.
+		Versuche dir die Zahl mit dem zugehörigen Gegenstand
+		einzuprägen.
+	</string>
+	<string name="treelist_intro_button_continue">Weiter</string>
+	<string name="treelist_item01">Einhorn (1 Horn)</string>
+	<string name="treelist_item02">Lichtschalter (2 Zustände)</string>
+	<string name="treelist_item03">Hocker (3 Beine)</string>
+	<string name="treelist_item04">Auto (4 Räder)</string>
+	<string name="treelist_item05">Hand (5 Finger)</string>
+	<string name="treelist_item06">Würfel (6 Seiten)</string>
+	<string name="treelist_item07">Sieben Zwerge</string>
+	<string name="treelist_item08">Spinne (8 Beine)</string>
+	<string name="treelist_item09">Katze (hat 9 Leben)</string>
+	<string name="treelist_item10">Kirche (10 Gebote)</string>
+
+	<!-- Treelist Generate Number -->
+	<string name="treelist_generate_intro_text">Versuche jetzt dir die 5 folgenden Zahlen in der
+		richtigen Reihenfolge einzuprägen. Denke dir dazu eine Geschichte aus,
+		die die 5 zugehörigen Gegenstände in der richtigen Reihenfolge
+		benutzt. Gehe dann weiter.
+		</string>
+	<string name="treelist_generate_button_continue">Weiter</string>
+	<string name="treelist_generate_button_hint">Zeige Gegenstände</string>
+
+	<!-- Treelist Verify Number -->
+	<string name="treelist_verify_intro_text">Tippe jetzt die Zahlen in derselben Reihenfolge ein, indem du die Geschichte im Kopf durchgehst.
+	Prüfe dann, ob du richtig liegst.
+	</string>
+	<string name="treelist_verify_button">Prüfen</string>
+	<string name="treelist_verify_dialog_positive">Gut gemacht! Du hast soeben die Grundlagen der Loci-Methode erfolgreich angewandt.
+	Du kannst jetzt zurück zum Hauptmenü gehen und es dort mit längeren Zahlenfolgen (und bis zu 100 Gegenständen versuchen).
+	</string>
+	<string name="treelist_verify_dialog_negative">Deine Zahlenfolge stimmt nicht überein, versuche es noch einmal.</string>
 </resources>

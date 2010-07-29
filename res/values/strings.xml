@@ -9,7 +9,8 @@
 	<string name="result_number_wrong">Wrong number!</string>
 	<string name="result_text_last_number">Great!</string>
 	<string name="result_text_input">Wrong number!</string>
-	<string name="main_button_information">First steps</string>
+	<string name="main_button_treelist">Loci method demo</string>
+	<string name="main_button_information">Help</string>
 	<string name="main_button_generate_number">Generate new number</string>
 	<string name="main_button_check_last_number">Type in last number</string>
 	<string name="main_button_maintain_list">Maintain list</string>
@@ -39,8 +40,8 @@
 	</string>
 
 	<string name="intro">This app is all about the loci method. This method
-	helps you in e.g. memorizing large numbers by creating a story using
-	images instead of the numbers itself.</string>
+		helps you in e.g. memorizing large numbers by creating a story using
+		images instead of the numbers itself.</string>
 	<string name="first_steps">This is how the app works:\n
 		1. Click
 		on generate
@@ -78,4 +79,39 @@
 		homepage to see an even
 		lengthier description.
 	</string>
+
+	<!-- Treelist -->
+	<string name="treelist_intro_text">This is the treelist, covering all numbers from 1
+		to 10. There is an item associated with each number, the reason is
+		shown in brackets. Try to memorize each number and the item to its
+		right.</string>
+	<string name="treelist_intro_button_continue">Continue</string>
+	<string name="treelist_item01">Unicorn (1 horn)</string>
+	<string name="treelist_item02">Light switch (2 states)</string>
+	<string name="treelist_item03">Stool (3 legs)</string>
+	<string name="treelist_item04">Car (4 wheels)</string>
+	<string name="treelist_item05">Hand (5 fingers)</string>
+	<string name="treelist_item06">Die (6 sides)</string>
+	<string name="treelist_item07">Seven dwarfs</string>
+	<string name="treelist_item08">Spider (8 legs)</string>
+	<string name="treelist_item09">Cat (9 lives)</string>
+	<string name="treelist_item10">Church (10 commandments)</string>
+
+	<!-- Treelist Generate Number -->
+	<string name="treelist_generate_intro_text">Now try to remember the items for the 5 numbers
+		below, by imagining a story using all numbers in the same order. Then
+		press continue to type the numbers in on the next screen.</string>
+	<string name="treelist_generate_button_continue">Continue</string>
+	<string name="treelist_generate_button_hint">Show items</string>
+
+	<!-- Treelist Verify Number -->
+	<string name="treelist_verify_intro_text">Now type in the numbers in the same order as they
+		were on the last screen and press the button to see if you were right.
+	</string>
+	<string name="treelist_verify_button">Verify</string>
+	<string name="treelist_verify_dialog_positive">Well done! This is how the loci method basically
+		works. You could now go back to the main screen and try with some
+		larger numbers and a list of 100 items (read the help there if needed).</string>
+	<string name="treelist_verify_dialog_negative">Your number doesn\'t match, try again.</string>
+
 </resources>
