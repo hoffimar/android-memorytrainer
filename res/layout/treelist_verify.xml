@@ -5,7 +5,8 @@
 	android:layout_height="wrap_content" android:gravity="center_horizontal">
 
 	<TextView android:id="@+id/TreeListVerifyIntro" android:text="@string/treelist_verify_intro_text"
-		android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+		android:textSize="16sp" android:layout_width="wrap_content"
+		android:layout_height="wrap_content"></TextView>
 
 
 
