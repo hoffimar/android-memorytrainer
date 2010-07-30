@@ -25,6 +25,9 @@
 	<string name="stats_overview_num_correct">Richtige Eingaben</string>
 	<string name="stats_overview_num_incorrect">Falsche Eingaben</string>
 	<string name="stats_overview_percentage_correct">% richtiger Eingaben</string>
+	
+	<string name="generate_number_intro">Versuche dir folgende Zahlen einzuprägen:</string>
+	
 	<string name="check_number_your_input_label">Deine Eingabe</string>
 	<string name="check_number_last_number_label">Letzte Zahl</string>
 	<string name="check_number_your_input_length_label">Länge deiner Eingabe</string>
@@ -35,6 +38,7 @@
 	</string>
 
 	<string name="download_spreadsheets">Import von Google Spreadsheets</string>
+	<string name="download_spreadsheets_warning">Das Importieren überschreibt ihre vorhandene Liste. Trotzdem fortsetzen?</string>
 	<string name="edit_item_label">Gegenstand für die Nummer </string>
 	<string name="edit_item_button_save">Speichern</string>
 

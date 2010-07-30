@@ -1,6 +1,8 @@
 package org.hoffimar.android.memorytrainer;
 
+import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -28,7 +30,7 @@ public class MaintainListActivity extends ListActivity {
 		mDbHelper.open();
 
 		fillData();
-		
+
 	}
 
 	private void fillData() {
@@ -48,17 +50,17 @@ public class MaintainListActivity extends ListActivity {
 		SimpleCursorAdapter items = new SimpleCursorAdapter(this, R.layout.listhundred, mCursor,
 				from, to);
 		setListAdapter(items);
-		
+
 		ListView lv = getListView();
 		lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 				Log.v(Constants.LOG_TAG, "clicked: " + arg2 + ", " + arg3);
-				
+
 				Intent i = new Intent(arg1.getContext(), EditItemActivity.class);
 				i.putExtra("id", arg2 + 1);
-				
+
 				FlurryAgent.onEvent(Constants.FLURRY_EVENTID_MAINTAIN_LIST_EDIT_ITEM);
 
 				startActivity(i);
@@ -88,8 +90,24 @@ public class MaintainListActivity extends ListActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case MENU_DOWNLOAD_SPREADSHEET:
-			Intent intent = new Intent(this, ListHundredActivity.class);
-			startActivity(intent);
+
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setMessage(R.string.download_spreadsheets_warning)
+					.setCancelable(false).setPositiveButton("Yes",
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog, int id) {
+									Intent intent = new Intent(getApplicationContext(),
+											ListHundredActivity.class);
+									startActivity(intent);
+								}
+							}).setNegativeButton("No", new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int id) {
+							dialog.cancel();
+						}
+					});
+			AlertDialog alert = builder.create();
+			alert.show();
+
 			return true;
 		}
 		return false;
