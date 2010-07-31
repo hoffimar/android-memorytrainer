@@ -16,9 +16,11 @@ import android.widget.TextView;
 
 public class CheckLastNumberActivity extends Activity {
 
-	EditText inputNumber;
-	Button verifyNumberButton;
-	TextView resultView;
+	private EditText inputNumber;
+	private Button verifyNumberButton;
+	private TextView resultView;
+	private TextView yourInputView;
+	private TextView lastNumberView;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,9 @@ public class CheckLastNumberActivity extends Activity {
 		inputNumber = (EditText) findViewById(R.id.EditTextInputNumberFromMemory);
 		inputNumber.setInputType(InputType.TYPE_CLASS_PHONE);
 		resultView = (TextView) findViewById(R.id.TextViewNumberVerification);
+		yourInputView = (TextView) findViewById(R.id.NumberVerificationInput);
+		lastNumberView = (TextView) findViewById(R.id.NumberVerificationLastNumber);
+		
 		
 		verifyNumberButton = (Button) findViewById(R.id.ButtonVerifyNumber);
 		verifyNumberButton.setOnClickListener(new View.OnClickListener() {
@@ -43,7 +48,7 @@ public class CheckLastNumberActivity extends Activity {
 				mDbHelper = new DbAdapter(getApplicationContext());
 				mDbHelper.open();
 				
-				boolean isInputCorrect = lastNumber.equals(numberUserInput);
+				boolean isInputCorrect = lastNumber.equals(numberUserInput.replace(" ", ""));
 				if (isInputCorrect){
 					resultView.setText(R.string.result_number_right);
 					mDbHelper.createStatsItem(lastNumber, true);
@@ -59,8 +64,15 @@ public class CheckLastNumberActivity extends Activity {
 						sb.append("\n\n");
 					}
 					
-					sb.append(getString(R.string.check_number_last_number_label) + ": " + lastNumber + "\n");
-					sb.append(getString(R.string.check_number_your_input_label) + ": " + numberUserInput);
+					
+//					sb.append(getString(R.string.check_number_last_number_label) + ": " + lastNumber + "\n");
+//					sb.append(getString(R.string.check_number_your_input_label) + ": " + numberUserInput);
+					
+					findViewById(R.id.NumberVerificationInputLabel).setVisibility(View.VISIBLE);
+					findViewById(R.id.NumberVerificationLastNumberLabel).setVisibility(View.VISIBLE);
+					
+					yourInputView.setText(numberUserInput);
+					lastNumberView.setText(lastNumber);
 					
 					resultView.setText(sb.toString());
 					mDbHelper.createStatsItem(lastNumber, false);

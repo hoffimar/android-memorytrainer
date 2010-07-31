@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent" android:layout_height="fill_parent">
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
 		android:orientation="vertical">
 
 
@@ -11,9 +11,8 @@
 			android:id="@+id/TextViewInstructionsCheckNumber"
 			android:layout_width="wrap_content" android:layout_height="wrap_content"
 			android:textSize="20sp"></TextView>
-		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			android:layout_width="fill_parent" android:layout_height="wrap_content"
-			android:orientation="vertical">
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:orientation="vertical">
 			<EditText android:id="@+id/EditTextInputNumberFromMemory"
 				android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
 			<Button android:text="@string/button_verify" android:id="@+id/ButtonVerifyNumber"
@@ -21,9 +20,48 @@
 				android:layout_gravity="center_horizontal"></Button>
 		</LinearLayout>
 
-		<TextView android:id="@+id/TextViewNumberVerification"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			style="@style/CheckNumberFont"></TextView>
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:orientation="vertical">
+			<TextView android:id="@+id/TextViewNumberVerification"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				style="@style/CheckNumberFont"></TextView>
 
+			<HorizontalScrollView android:layout_width="fill_parent"
+				android:layout_height="fill_parent">
+				<TableLayout android:layout_width="fill_parent"
+					android:layout_height="wrap_content">
+
+					<TableRow android:layout_width="fill_parent"
+						android:layout_height="wrap_content" android:gravity="left">
+						<TextView android:id="@+id/NumberVerificationLastNumberLabel"
+							android:text="@string/check_number_last_number_label"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							style="@style/CheckNumberFont" android:visibility="invisible"
+							android:paddingRight="5sp"></TextView>
+						<TextView android:id="@+id/NumberVerificationLastNumber"
+							android:layout_width="fill_parent" android:layout_height="wrap_content"
+							style="@style/CheckNumberFont" android:layout_gravity="left"
+							android:gravity="left"></TextView>
+					</TableRow>
+
+
+					<TableRow android:layout_width="fill_parent"
+						android:layout_height="wrap_content" android:gravity="left">
+						<TextView android:id="@+id/NumberVerificationInputLabel"
+							android:text="@string/check_number_your_input_label"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							style="@style/CheckNumberFont" android:visibility="invisible"
+							android:paddingRight="5sp"></TextView>
+						<TextView android:id="@+id/NumberVerificationInput"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							style="@style/CheckNumberFont" android:layout_gravity="left"
+							android:gravity="left"></TextView>
+					</TableRow>
+
+
+
+				</TableLayout>
+			</HorizontalScrollView>
+		</LinearLayout>
 	</LinearLayout>
 </ScrollView>

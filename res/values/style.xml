@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<style name="CheckNumberFont" parent="@android:style/TextAppearance.Medium">
-		<item name="android:textSize">15sp</item>
+		<item name="android:textSize">19sp</item>
 	</style>
 	<style name="StatisticsFont" parent="@android:style/TextAppearance.Medium">
 		<item name="android:textSize">20sp</item>

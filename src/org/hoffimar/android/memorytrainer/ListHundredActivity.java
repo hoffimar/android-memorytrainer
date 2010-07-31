@@ -243,6 +243,7 @@ public class ListHundredActivity extends ListActivity {
 			}
 		} catch (IOException e) {
 			Log.e(Constants.LOG_TAG, "Message: " + e.getMessage());
+			FlurryAgent.onError(Constants.FLURRY_ERRORID_MAINTAIN_LIST_DOWNLOAD_ERROR, e.getMessage(), "");
 		} finally {
 			progressDialog.dismiss();
 		}

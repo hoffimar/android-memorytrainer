@@ -25,8 +25,14 @@ public class Constants {
 	public static final String FLURRY_EVENTID_MAINTAIN_LIST_DOWNLOAD_ERROR = "spreadsheet download - ERROR";
 	public static final String FLURRY_EVENTID_MAINTAIN_LIST_DONE_READING = "spreadsheet download: SUCCESS";
 	public static final String FLURRY_EVENTID_MAINTAIN_LIST_EDIT_ITEM = "edit list item";
+	public static final String FLURRY_EVENTID_MAINTAIN_LIST_EDIT_ITEM_SAVE = "list item saved";
+	public static final String FLURRY_ERRORID_MAINTAIN_LIST_DOWNLOAD_ERROR = "list item saved";
 	
 	public static final String FLURRY_EVENTID_TREELIST_GENERATE = "treelist: generate number";
 	public static final String FLURRY_EVENTID_TREELIST_VERIFY = "treelist: verify number screen";
 	public static final String FLURRY_EVENTID_TREELIST_VERIFY_CLICKVERIFY = "treelist: verify number";
+	
+	public static final String FLURRY_EVENTID_INFORMATION_WIKIPEDIA_LINK = "help: wikipedia clicked";
+	
+	public static final String FLURRY_EVENTID_ABOUT_WIKIPEDIA_LINK = "about: wikipedia clicked";
 }

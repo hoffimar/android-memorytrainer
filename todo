@@ -1,3 +1,4 @@
+- verify number activity: don't delete all onOrientationChange
 - close database correctly, leak
 - performance
 - chinese translation

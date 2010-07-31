@@ -24,6 +24,7 @@ public class AboutActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+				FlurryAgent.onEvent(Constants.FLURRY_EVENTID_ABOUT_WIKIPEDIA_LINK);
 				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.about_link_wikipedia))));
 			}
 		});
