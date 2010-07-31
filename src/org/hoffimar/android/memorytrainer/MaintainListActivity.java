@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -56,8 +55,6 @@ public class MaintainListActivity extends ListActivity {
 
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-				Log.v(Constants.LOG_TAG, "clicked: " + arg2 + ", " + arg3);
-
 				Intent i = new Intent(arg1.getContext(), EditItemActivity.class);
 				i.putExtra("id", arg2 + 1);
 

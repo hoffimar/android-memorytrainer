@@ -93,7 +93,6 @@ public class TreeListGenerateActivity extends Activity {
 		short number = 0;
 		do {
 			number = new Double(Math.ceil(Math.random() * 10)).shortValue();
-			Log.v(Constants.LOG_TAG, "number: " + number);
 		} while (isNumberInArray(number));
 		numbers[pos-1] = number;
 		
