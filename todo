@@ -1,7 +1,6 @@
 - verify number activity: don't delete all onOrientationChange
 - close database correctly, leak
 - performance
-- chinese translation
 - db upgrade working?
 - MaintainListActivity: 
 	- change back button behaviour for MaintainListActivity? don't show browser again

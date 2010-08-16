@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Loci Method Trainer</string>
+	<string name="check_number_instructions">請輸入你記憶中還記得的數字</string>
+	<string name="show_hint">顯示提示</string>
+	<string name="hide_hint">隱藏提示</string>
+	<string name="result_number_right">好極了！</string>
+	<string name="result_number_wrong">錯誤的數字！</string>
+	<string name="result_text_last_number">好極了！</string>
+	<string name="result_text_input">錯誤的數字！</string>
+	<string name="main_button_treelist">位置記憶法示範</string>
+	<string name="main_button_information">說明</string>
+	<string name="main_button_generate_number">產生新的數字</string>
+	<string name="main_button_check_last_number">輸入最後的數字</string>
+	<string name="main_button_maintain_list">維護清單清單</string>
+	<string name="about_button_wikipedia">維基百科上關於位置記憶法的描述</string>
+	<string name="about_description">這個軟體使用位置記憶法來協助你訓練你的記憶力</string>
+	<string name="button_verify">驗證</string>
+	<string name="about_link_wikipedia">http://en.wikipedia.org/wiki/Method_of_loci
+	</string>
+	<string name="about_link_wiki">http://wiki.github.com/hoffimar/android-memorytrainer/
+	</string>
+	<string name="about_description_wiki">本軟體是一個開源的軟體，你可以隨時為之出力。只需要存取</string>
+	<string name="main_about_button">關於</string>
+	<string name="button_configure_digits">變更數字位數</string>
+	<string name="main_button_statistics">統計</string>
+	<string name="stats_overview_num_correct">正確的數字</string>
+	<string name="stats_overview_num_incorrect">不正確的數字</string>
+	<string name="stats_overview_percentage_correct">輸入正確數字所佔百分數</string>
+	
+	<string name="generate_number_intro">試著記住下面的數字：</string>
+	
+	<string name="check_number_your_input_label">你的輸入</string>
+	<string name="check_number_last_number_label">最後的數字</string>
+	<string name="check_number_your_input_length_label">你所輸入的數字的長度</string>
+	<string name="check_number_last_number_length_label">最後的數字的實際長度</string>
+	<string name="check_number_wrong_length">你所輸入的數字長度是錯誤的：</string>
+	<string name="list_hundred_no_spreadsheet_available">請在 Google Docs 上建立一個標題為\'MemoryTrainer\'的電子錶格，在\'第一步\'的說明下檢視這個文件</string>
+
+	<string name="download_spreadsheets">從 Google Spreadsheets 上下載</string>
+	<string name="download_spreadsheets_warning">下載將覆寫現有的清單項。你確定嗎？</string>
+	<string name="edit_item_label">輸入以下數字對應的項目：</string>
+	<string name="edit_item_button_save">儲存</string>
+
+	<!-- Help -->
+	<string name="intro">這個程式完全是關於位置記憶法的。這個方法有助由你例如通過想像一個故事而不是數字本身來記住一個很大的數字。</string>
+	<string name="first_steps">下面是說明這個軟體是如何工作的：\n 
+1. 點擊產生一個數字然後嘗試去記住它。你可以按Menu鍵來指定這個數字的長度。為了便於記住它，它會被分成好幾個數字部份，每個部份都是一個2位數，對應著一個項目、動物、... (你可以在Google Docs上建立一個像下面描述的那樣的電子錶格，這樣你就可以清楚的知道每個不同的數字是對應於那個項目的了)。通常你都可以使用你為每個數字設定的項目來編一個故事或是演練。\n 
+2. 在你覺得你已經記住一個數字之後返回主介面然後進入輸入最後的數字來進行輸入。輸完之後，點擊驗證來看看你是不是記對了。每次嘗試都會被記錄並儲存到對你的統計中。\n 
+3. 點擊統計來檢視你是經常記對呢還是經常記錯。\n 
+4. 轉到\'維護清單清單\'來維護所有100個數字的對應的項目。你也可以轉到 docs.google.com 然後建立一個名為\"MemoryTrainer\"的電子錶格。在這裡， 在列\'A\'中填入一個可以聯想到對應數字的項目、動物或是人物。例如，在第 1 列中用\' 獨角獸\'。對第 5 列可以用\'手指\'。 檢查開發者的首頁可以檢視一個更細節的描述。</string>
+
+	<!-- Treelist -->
+	<string name="treelist_intro_text">這是一個清單樹，涵蓋了從 1 到 10 之間的所有數。
+對於每個數字都有一個對應的項目，是對數字的解釋，顯示在括弧內。
+嘗試記住每個數字和對應的項目。</string>
+	<string name="treelist_intro_button_continue">繼續</string>
+	<string name="treelist_item01">獨角獸 (1 個角)</string>
+	<string name="treelist_item02">電燈開關 (2 種狀態)</string>
+	<string name="treelist_item03">三角凳 (3 個凳腿)</string>
+	<string name="treelist_item04">汽車 (4 個輪子)</string>
+	<string name="treelist_item05">手 (5 根手指)</string>
+	<string name="treelist_item06">骰子 (6 個面)</string>
+	<string name="treelist_item07">七個小矮人</string>
+	<string name="treelist_item08">蜘蛛 (8 只腳)</string>
+	<string name="treelist_item09">貓 (9 條命)</string>
+	<string name="treelist_item10">基督教徒 (10 戒律)</string>
+
+	<!-- Treelist Generate Number -->
+	<string name="treelist_generate_intro_text">現在通過按下面數字對應的項目按照排列順序來想像出一個故事，這樣試著來記住下面 5 個數字。然後點擊繼續來輸入在上一屏幕中出現的數字。</string>
+	<string name="treelist_generate_button_continue">繼續</string>
+	<string name="treelist_generate_button_hint">顯示項目</string>
+
+	<!-- Treelist Verify Number -->
+	<string name="treelist_verify_intro_text">現在按照你所記住的上一屏幕中的數字，按照其順序輸入到文字方塊中，然後點擊驗證按鈕來檢視你是否是正確的。</string>
+	<string name="treelist_verify_button">驗證</string>
+	<string name="treelist_verify_dialog_positive">幹的好！這就是一個基本的位置記憶法的工作資料流程了。你現在可以返回到主介面中嘗試一些較大的數字以及一個含 100 個項目的清單了(如果你需要的看，檢視說明)。</string>
+	<string name="treelist_verify_dialog_negative">你輸入的數字不符合，重試。</string>
+
+	<string name="translation_goapk">安智網中文化（http://goapk.com)</string>
+</resources>

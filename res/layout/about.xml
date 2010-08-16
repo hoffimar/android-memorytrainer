@@ -13,5 +13,8 @@
 
 		<TextView android:id="@+id/AboutTextViewWiki"
 			android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+		<TextView android:id="@+id/AboutTextViewChineseTranslation"
+			android:text="@string/translation_goapk" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:paddingTop="5sp"></TextView>
 	</LinearLayout>
 </ScrollView>
