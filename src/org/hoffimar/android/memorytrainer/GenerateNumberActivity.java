@@ -54,7 +54,7 @@ public class GenerateNumberActivity extends Activity {
 		// Generate pairs of digits instead of 1 long
 		StringBuffer s = new StringBuffer(numberString);
 		for (int i = 0; i < digits / 2; i++) {
-			int twoDigits = new Double(Math.floor(Math.random() * 100 + 1)).intValue();
+			int twoDigits = generateIntWithinBoundaries();
 			String asString = Integer.toString(twoDigits);
 			if (twoDigits < 10) {
 				s.append('0' + asString);
@@ -68,6 +68,22 @@ public class GenerateNumberActivity extends Activity {
 		}
 		numberString = s.toString();
 		return numberString;
+	}
+
+	private int generateIntWithinBoundaries() {
+		SharedPreferences settings = getSharedPreferences(Overview.PREFS_NAME, 0);
+		String lowerString = settings.getString("lowerBoundary", "1");
+		String upperString = settings.getString("upperBoundary", "100");
+		
+		int upper = Integer.parseInt(upperString);
+		int offset = Integer.parseInt(lowerString);
+		
+//		Log.v(Constants.LOG_TAG, "Generated number within boundaries: " + offset + ", " + upper);
+		
+		int generatedValue = new Double(Math.floor(Math.random() * (upper + 1 - offset) + offset)).intValue();
+//		Log.v(Constants.LOG_TAG, "Generated value: " + generatedValue);
+		
+		return generatedValue;
 	}
 
 	private void saveNumberToPrefs(String numberString) {

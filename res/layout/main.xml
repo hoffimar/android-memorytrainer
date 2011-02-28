@@ -23,5 +23,8 @@
 		<Button android:layout_width="fill_parent"
 			android:layout_height="wrap_content" android:text="@string/main_button_information"
 			android:id="@+id/InformationButton" android:drawableLeft="@drawable/help" />
+		<Button android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:text="@string/main_button_settings"
+			android:id="@+id/SettingsButton" android:drawableLeft="@drawable/settings" />
 	</LinearLayout>
 </ScrollView>

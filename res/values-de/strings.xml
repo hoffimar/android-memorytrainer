@@ -12,10 +12,13 @@
 	<string name="main_button_generate_number">Neue Zahl generieren</string>
 	<string name="main_button_check_last_number">Letzte Zahl eingeben</string>
 	<string name="main_button_maintain_list">Liste verwalten</string>
+	<string name="main_button_settings">Einstellungen</string>
+	
 	<string name="about_button_wikipedia">Loci-Methode bei Wikipedia</string>
 	<string name="about_description">Diese App hilft ihnen, die Loci-Methode zu üben
 	</string>
-	<string name="translation_goapk">Chinesische Übersetzung von http://goapk.com</string>
+	<string name="translation_goapk">Chinesische Übersetzung von http://goapk.com
+	</string>
 	<string name="button_verify">Prüfen</string>
 	<string name="about_link_wikipedia">http://de.wikipedia.org/wiki/Loci-Methode</string>
 	<string name="about_description_wiki">Diese App ist Open Source, wenn du beitragen
@@ -26,9 +29,9 @@
 	<string name="stats_overview_num_correct">Richtige Eingaben</string>
 	<string name="stats_overview_num_incorrect">Falsche Eingaben</string>
 	<string name="stats_overview_percentage_correct">% richtiger Eingaben</string>
-	
+
 	<string name="generate_number_intro">Versuche dir folgende Zahlen einzuprägen:</string>
-	
+
 	<string name="check_number_your_input_label">Deine Eingabe</string>
 	<string name="check_number_last_number_label">Letzte Zahl</string>
 	<string name="check_number_your_input_length_label">Länge deiner Eingabe</string>
@@ -39,7 +42,8 @@
 	</string>
 
 	<string name="download_spreadsheets">Import von Google Spreadsheets</string>
-	<string name="download_spreadsheets_warning">Das Importieren überschreibt ihre vorhandene Liste. Trotzdem fortsetzen?</string>
+	<string name="download_spreadsheets_warning">Das Importieren überschreibt ihre vorhandene Liste.
+		Trotzdem fortsetzen?</string>
 	<string name="edit_item_label">Gegenstand für die Nummer </string>
 	<string name="edit_item_button_save">Speichern</string>
 
@@ -124,4 +128,9 @@
 	</string>
 	<string name="treelist_verify_dialog_negative">Deine Zahlenfolge stimmt nicht überein, versuche es
 		noch einmal.</string>
+
+	<string name="prefs_lower_boundary_title">Untere Grenze</string>
+	<string name="prefs_lower_boundary_summary">Gib an wie groß die zu merkenden Zahlen mindestens sein müssen</string>
+	<string name="prefs_upper_boundary_title">Obere Grenze</string>
+	<string name="prefs_upper_boundary_summary">Gib an wie groß die zu merkenden Zahlen maximal sein sollen</string>
 </resources>

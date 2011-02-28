@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<ListPreference android:key="lowerBoundary"
+		android:title="@string/prefs_lower_boundary_title"
+		android:summary="@string/prefs_lower_boundary_summary">
+	</ListPreference>
+	<ListPreference android:key="upperBoundary"
+		android:title="@string/prefs_upper_boundary_title"
+		android:summary="@string/prefs_upper_boundary_summary">
+	</ListPreference>
+</PreferenceScreen>

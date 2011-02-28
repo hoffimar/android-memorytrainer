@@ -26,8 +26,8 @@ public class Overview extends Activity {
 	private Button generateNumberButton;
 	private Button verifyNumberButton;
 	private Button statisticsButton;
+	private Button settingsButton;
 	
-    /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,6 +95,15 @@ public class Overview extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent i = new Intent(v.getContext(), StatisticsOverviewActivity.class);
+				startActivity(i);
+			}
+		});
+        
+        settingsButton = (Button) findViewById(R.id.SettingsButton);
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(v.getContext(), EditPreferencesActivity.class);
 				startActivity(i);
 			}
 		});
